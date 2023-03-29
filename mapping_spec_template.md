@@ -4,15 +4,15 @@ Last Edited: 29/03/2023
 
 ## Description
 
-This object is the atomic level bridge table for packaging. Containing both Evolve Food and Valpak, this performs all the cleaning and calculations that need to take place prior to being consumed in the PL layer. This object supports FACT_ITEM_SPECIFICATION_COMPONENT and AGG_ITEM_PRIMARY_PLASTICS.
+This object is the atomic level bridge table for packaging. Containing both Evolve Food and Valpak, this performs all the cleaning and calculations that need to take place prior to being consumed in the PL layer. This object supports `FACT_ITEM_SPECIFICATION_COMPONENT` and `AGG_ITEM_PRIMARY_PLASTICS`.
 
 ## Source to Target
 
 These tables are assumed to be unioned in the spec and will have the name OP, AP and VALPAK as aliases:
 
-* ADW_PRODUCT_TRAN.ITEM_PACKAGING_COMPONENT_VALPAK_HIST_BR_LOGIC_2 as VALPAK
-* ADW_RDV.ADVANCED_PACKAGING_COMPONENT_LINK as AP
-* ADW_RDV.ITEM_SPECIFICATION_ITEM_PACKAGING_COMPONENT_LINK as OP
+* `ADW_PRODUCT_TRAN.ITEM_PACKAGING_COMPONENT_VALPAK_HIST_BR_LOGIC_2` as `VALPAK`
+* `ADW_RDV.ADVANCED_PACKAGING_COMPONENT_LINK` as `AP`
+* `ADW_RDV.ITEM_SPECIFICATION_ITEM_PACKAGING_COMPONENT_LINK` as `OP`
 
 | **Source Tables**| **Source Columns**| **Target Column**         |
 |------------------|-------------------|---------------------------|
@@ -36,7 +36,7 @@ These tables are assumed to be unioned in the spec and will have the name OP, AP
 
 ## Mapping steps, rules and calculations
 
-Calculations
+**Calculations:**
 
 * Secondary weight calculation:
     * COMPONENT_WEIGHT / CASE_CRATE_SHIPPER_QTY
@@ -64,11 +64,11 @@ Calculated Weight for Bottle = 4 * 34 gm = 136 gm
             * Bottle 32g,Bottle 36g, Bottle 33g
             * Average value = 33.6 g / 3 = 11.2 g
 
-Rules
+**Rules:**
 
 * An Item has more than one supplier. This is an issue because the finance data doesn't include supplier info, so how do we proportion the units correctly. There is a method devised to take the stock holdings of the supplier and apply a weighted percentage of the units to each supplier.
 
-Mapping Steps
+**Mapping Steps:**
 
 1) Filter both Valpak and Evolve sources with the supporting SQL given to ensure correct data and no duplication into the final table.
 1) Combine original packaging, advanced packaging, supplier site & evolve sat for packaging data.
