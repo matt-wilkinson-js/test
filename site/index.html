@@ -241,6 +241,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="DDL/ddl/" class="md-tabs__link">
+        DDL
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -380,33 +396,6 @@
   <a href="#ddls" class="md-nav__link">
     DDL'S
   </a>
-  
-    <nav class="md-nav" aria-label="DDL'S">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#item_specification_component_br" class="md-nav__link">
-    ITEM_SPECIFICATION_COMPONENT_BR
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#agg_item_primary_plastics" class="md-nav__link">
-    AGG_ITEM_PRIMARY_PLASTICS
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#fact_item_specification_component" class="md-nav__link">
-    FACT_ITEM_SPECIFICATION_COMPONENT
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
   
 </li>
       
@@ -571,6 +560,55 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          DDL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DDL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="DDL/ddl/" class="md-nav__link">
+        Ddl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -600,81 +638,6 @@
 <p><a href="http://127.0.0.1:8000/mapping_spec_example/">ITEM_SPECIFICATION_COMPONENT_BR</a></p>
 <h3 id="pl">PL</h3>
 <h2 id="ddls">DDL'S</h2>
-<h4 id="item_specification_component_br">ITEM_SPECIFICATION_COMPONENT_BR</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ADW_BDV</span><span class="p">.</span><span class="n">ITEM_SPECIFICATION_COMPONENT_BR</span>
-<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a><span class="p">(</span>
-<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a><span class="w"> </span><span class="n">ITEM_CD</span><span class="w">                   </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;ITEM code&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a><span class="w"> </span><span class="n">SPECIFICATION_VERSION_CD</span><span class="w">  </span><span class="nb">varchar</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Spec &amp; Version&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a><span class="w"> </span><span class="n">PACKAGING_CD</span><span class="w">              </span><span class="nb">varchar</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Packaging code.&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a><span class="w"> </span><span class="n">COMPONENT_CD</span><span class="w">              </span><span class="nb">varchar</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Component code&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a><span class="w"> </span><span class="n">ALPHANUMERIC_SUPPLIER_CD</span><span class="w">  </span><span class="nb">varchar</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Alphanumeric Supplier Code&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a><span class="w"> </span><span class="n">ENTERPRISE_SUPPLIER_CD</span><span class="w">    </span><span class="nb">varchar</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="p">,</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Enterprise Code&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a><span class="w"> </span><span class="n">RECYCLING_ADVICE_ICON</span><span class="w">     </span><span class="nb">varchar</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Recycling Advice&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a><span class="w"> </span><span class="n">COUNTRY</span><span class="w">                   </span><span class="nb">varchar</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Country&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a><span class="w"> </span><span class="n">TRAN_DT</span><span class="w">                   </span><span class="nb">date</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Sales transaction date.&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a><span class="w"> </span><span class="n">FULFILMENT_CHANNEL_CD</span><span class="w">     </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;The channel of the sale e.g. in store&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a><span class="w"> </span><span class="n">COMPONENT_WEIGHT</span><span class="w">          </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Weight of each component.&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a><span class="w"> </span><span class="n">COMPONENT_RECYCLED_WEIGHT</span><span class="w"> </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Weight of recycled content in the component.&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a><span class="w"> </span><span class="n">RECYCLED_WEIGHT_PCT</span><span class="w">       </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Recycled weight percentage&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a><span class="w"> </span><span class="n">SALES_VOLUME</span><span class="w">              </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Unit sales by item divided by the no of components in each spec &amp; version.&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a><span class="w"> </span><span class="n">TOTAL_TONNAGE</span><span class="w">             </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calculation to show plastic tonnage output.&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a><span class="w"> </span><span class="n">RECYCLED_TONNAGE</span><span class="w">          </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calculation for recycled tonnage.&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a><span class="w"> </span><span class="n">TECHNICAL_METADATA</span><span class="w">        </span><span class="n">variant</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;A JSON message of support fields. See Aspire modelling standards. Can be any of these: BATCH_ID</span>
-<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a><span class="s1">RECORD_ARRIVAL_TS</span>
-<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a><span class="s1">ETL_FRAMEWORK</span>
-<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a><span class="s1">HASH_DIFF</span>
-<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a><span class="s1">JOB_NAME</span>
-<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a><span class="s1">LOAD_TS</span>
-<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a><span class="s1">REASON_CD</span>
-<a id="__codelineno-0-26" name="__codelineno-0-26" href="#__codelineno-0-26"></a><span class="s1">RECORD_DELETED_FLAG</span>
-<a id="__codelineno-0-27" name="__codelineno-0-27" href="#__codelineno-0-27"></a><span class="s1">SOURCE_PATH</span>
-<a id="__codelineno-0-28" name="__codelineno-0-28" href="#__codelineno-0-28"></a><span class="s1">SOURCE_SYSTEM_CD</span>
-<a id="__codelineno-0-29" name="__codelineno-0-29" href="#__codelineno-0-29"></a><span class="s1">RECORD_ID</span>
-<a id="__codelineno-0-30" name="__codelineno-0-30" href="#__codelineno-0-30"></a><span class="s1">VALID_FROM_TS</span>
-<a id="__codelineno-0-31" name="__codelineno-0-31" href="#__codelineno-0-31"></a><span class="s1">VALID_TO_TS&#39;</span><span class="p">,</span>
-<a id="__codelineno-0-32" name="__codelineno-0-32" href="#__codelineno-0-32"></a>
-<a id="__codelineno-0-33" name="__codelineno-0-33" href="#__codelineno-0-33"></a><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="n">ITEM_SPECIFICATION_COMPONENT_BR</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">ITEM_CD</span><span class="p">,</span><span class="w"> </span><span class="n">SPECIFICATION_VERSION_CD</span><span class="p">,</span><span class="w"> </span><span class="n">PACKAGING_CD</span><span class="p">,</span><span class="w"> </span><span class="n">COMPONENT_CD</span><span class="p">,</span><span class="w"> </span><span class="n">ALPHANUMERIC_SUPPLIER_CD</span><span class="p">,</span><span class="w"> </span><span class="n">ENTERPRISE_SUPPLIER_CD</span><span class="p">,</span><span class="w"> </span><span class="n">RECYCLING_ADVICE_ICON</span><span class="p">,</span><span class="w"> </span><span class="n">COUNTRY</span><span class="p">,</span><span class="w"> </span><span class="n">TRAN_DT</span><span class="p">,</span><span class="w"> </span><span class="n">FULFILMENT_CHANNEL_CD</span><span class="w"> </span><span class="p">)</span>
-<a id="__codelineno-0-34" name="__codelineno-0-34" href="#__codelineno-0-34"></a><span class="p">)</span>
-<a id="__codelineno-0-35" name="__codelineno-0-35" href="#__codelineno-0-35"></a><span class="k">COMMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;This table combines Valpak &amp; Evolve packaging data with sales to calculate the plastic and other material output in tonnes.&#39;</span><span class="p">;</span>
-</code></pre></div>
-<h4 id="agg_item_primary_plastics">AGG_ITEM_PRIMARY_PLASTICS</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">ADW_PRODUCT_PL</span><span class="p">.</span><span class="n">AGG_ITEM_PRIMARY_PLASTICS</span>
-<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a><span class="p">(</span>
-<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a><span class="w"> </span><span class="n">ITEM_CD</span><span class="w">              </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;ITEM code&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="w"> </span><span class="n">GROUP_SUPPLIER_CD</span><span class="w">    </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Group Supplier Code&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a><span class="w"> </span><span class="n">RECYCLING_ADVICE_CD</span><span class="w">  </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Recycling Advice&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a><span class="w"> </span><span class="n">COUNTRY</span><span class="w">              </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Country&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="w"> </span><span class="n">CALNDR_PERIOD_NUM</span><span class="w">    </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calendar month.&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a><span class="w"> </span><span class="n">ITEM_WEIGHT</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Weight of the items components.&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-9" name="__codelineno-1-9" href="#__codelineno-1-9"></a><span class="w"> </span><span class="n">ITEM_RECYCLED_WEIGHT</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Weight of recycled content in the item.&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-10" name="__codelineno-1-10" href="#__codelineno-1-10"></a><span class="w"> </span><span class="n">RECYCLED_WEIGHT_PCT</span><span class="w">  </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Percentage of the recycled content.&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-11" name="__codelineno-1-11" href="#__codelineno-1-11"></a><span class="w"> </span><span class="n">SALES_VOLUME</span><span class="w">         </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Sales units.&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-12" name="__codelineno-1-12" href="#__codelineno-1-12"></a><span class="w"> </span><span class="n">TOTAL_TONNAGE</span><span class="w">        </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calculation to show plastic tonnage output.&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-13" name="__codelineno-1-13" href="#__codelineno-1-13"></a><span class="w"> </span><span class="n">RECYCLED_TONNAGE</span><span class="w">     </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calculation for recycled tonnage.&#39;</span><span class="p">,</span>
-<a id="__codelineno-1-14" name="__codelineno-1-14" href="#__codelineno-1-14"></a><span class="w"> </span><span class="n">RECYCLABILITY_PCT</span><span class="w">    </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calculation for showing how much of the item can be recycled in future.&#39;</span>
-<a id="__codelineno-1-15" name="__codelineno-1-15" href="#__codelineno-1-15"></a><span class="p">)</span>
-<a id="__codelineno-1-16" name="__codelineno-1-16" href="#__codelineno-1-16"></a><span class="k">COMMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;An aggregated table based off ITEM_SPECIFICATION_COMPONENT_BR to fit the requirements of the Plan for Better Commercial dashboard.&#39;</span><span class="p">;</span>
-</code></pre></div>
-<h4 id="fact_item_specification_component">FACT_ITEM_SPECIFICATION_COMPONENT</h4>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">VIEW</span><span class="w"> </span><span class="n">ADW_PRODUCT_PL</span><span class="p">.</span><span class="n">FACT_ITEM_SPECIFICATION_COMPONENT</span>
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a><span class="p">(</span>
-<a id="__codelineno-2-3" name="__codelineno-2-3" href="#__codelineno-2-3"></a><span class="w"> </span><span class="n">ITEM_CD</span><span class="w">                   </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;ITEM code&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-4" name="__codelineno-2-4" href="#__codelineno-2-4"></a><span class="w"> </span><span class="n">SPECIFICATION_VERSION_CD</span><span class="w">  </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Spec &amp; Version&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-5" name="__codelineno-2-5" href="#__codelineno-2-5"></a><span class="w"> </span><span class="n">PACKAGING_COMPONENT_CD</span><span class="w">    </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Packaging Code.&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-6" name="__codelineno-2-6" href="#__codelineno-2-6"></a><span class="w"> </span><span class="n">ENTERPRISE_SUPPLIER_CD</span><span class="w">    </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Alphanumeric Supplier Code&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-7" name="__codelineno-2-7" href="#__codelineno-2-7"></a><span class="w"> </span><span class="n">RECYCLING_ADVICE_CD</span><span class="w">       </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Recycling Advice&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-8" name="__codelineno-2-8" href="#__codelineno-2-8"></a><span class="w"> </span><span class="n">COUNTRY</span><span class="w">                   </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Country&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-9" name="__codelineno-2-9" href="#__codelineno-2-9"></a><span class="w"> </span><span class="n">CALNDR_PERIOD_NUM</span><span class="w">         </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Sales transaction month.&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-10" name="__codelineno-2-10" href="#__codelineno-2-10"></a><span class="w"> </span><span class="n">FULFILMENT_CHANNEL_CD</span><span class="w">     </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Channel of the sale e.g. in store&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-11" name="__codelineno-2-11" href="#__codelineno-2-11"></a><span class="w"> </span><span class="n">COMPONENT_WEIGHT</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Weight of each component.&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-12" name="__codelineno-2-12" href="#__codelineno-2-12"></a><span class="w"> </span><span class="n">COMPONENT_RECYCLED_WEIGHT</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Weight of recycled content in the component.&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-13" name="__codelineno-2-13" href="#__codelineno-2-13"></a><span class="w"> </span><span class="n">RECYCLED_WEIGHT_PCT</span><span class="w">       </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Recycled weight percentage&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-14" name="__codelineno-2-14" href="#__codelineno-2-14"></a><span class="w"> </span><span class="n">SALES_VOLUME</span><span class="w">              </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Unit sales by item divided by the no of components in each spec &amp; version.&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-15" name="__codelineno-2-15" href="#__codelineno-2-15"></a><span class="w"> </span><span class="n">TOTAL_TONNAGE</span><span class="w">             </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calculation to show plastic tonnage output.&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-16" name="__codelineno-2-16" href="#__codelineno-2-16"></a><span class="w"> </span><span class="n">RECYCLED_TONNAGE</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">&#39;Calculation for recycled tonnage.&#39;</span><span class="p">,</span>
-<a id="__codelineno-2-17" name="__codelineno-2-17" href="#__codelineno-2-17"></a><span class="p">)</span>
-<a id="__codelineno-2-18" name="__codelineno-2-18" href="#__codelineno-2-18"></a><span class="k">COMMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;This table combines Valpak &amp; Evolve packaging data with sales to calculate the plastic and other material output in tonnes.&#39;</span><span class="p">;</span>
-</code></pre></div>
 <h2 id="packaging-diagrams">Packaging Diagrams</h2>
 <h3 id="dimensional-model">Dimensional Model</h3>
 <h3 id="stage-to-pl-flow">Stage to PL Flow</h3>

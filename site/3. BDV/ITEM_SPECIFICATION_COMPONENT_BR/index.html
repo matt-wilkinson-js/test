@@ -243,6 +243,22 @@
   
 
       
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../DDL/ddl/" class="md-tabs__link">
+        DDL
+      </a>
+    </li>
+  
+
+      
     </ul>
   </div>
 </nav>
@@ -501,6 +517,55 @@
   
 
     
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          DDL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          DDL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../DDL/ddl/" class="md-nav__link">
+        Ddl
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -520,7 +585,7 @@
 
 
 <h1 id="item_specification_component_br">ITEM_SPECIFICATION_COMPONENT_BR</h1>
-<p><strong>Last Edited: 21/04/2022</strong></p>
+<p><strong>Last Edited: 24/04/2022</strong></p>
 <h2 id="description">Description</h2>
 <p>This object is the atomic level bridge table for packaging. Containing both Evolve Food and Valpak, this performs all the cleaning and calculations that need to take place prior to being consumed in the PL layer. This object supports <code>FACT_ITEM_SPECIFICATION_COMPONENT</code> and <code>AGG_ITEM_PRIMARY_PLASTICS</code>.</p>
 <h2 id="jira-tickets">Jira Tickets</h2>
@@ -783,79 +848,152 @@
 </table>
 <h2 id="mapping-steps">Mapping Steps</h2>
 <ol>
-<li>Filter both Valpak and Evolve sources with the supporting logic given to ensure correct data and no duplication into the final table.</li>
-<li>Combine original packaging, advanced packaging, supplier site &amp; evolve sat to obtain the necessary packaging data.</li>
-<li>Apply calculations and transformations on packaging data weights. See calculations section for more detail. </li>
+<li>Filter both Valpak and Evolve sources using the selection criteria given to ensure correct data and no duplication into the final table.</li>
+<li>Get item spec, version, supplier, item_cd for active specs from:<ol>
+<li>ITEM_SPEC_NK1, ITEM_SPEC_NK2 from ITEM_SPECIFICATION_EVOLVE_SAT</li>
+<li>ITEM_SUPPLIER_CD from ITEM_SUPPLIER_SITE_LINK<ol>
+<li>
+<details class="warning" open="open">
+<summary>Supplier Cleaning</summary>
+<strong>Remove Dummy Supplier</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Remove ITEM_SUPPLIER_CD = I0055 when ITEM_SPEC_TITLE contains DO NOT USE
+</code></pre></div>
+<strong>Clean Evolve Supplier Codes</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Trim any supplier codes that end in -1  
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Remove ITEM_SUPPLIER_CD:  
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>XA11115 (Dummy Code)  
+<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>200435 (GM Supplier)  
+<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>210206 (GM Supplier)
+</code></pre></div></details>
+</li>
+<li>Get ITEM_CD from TS_BDV_ITEM_PACKAGING_COMPONENT_AVG_WEIGHT_HIST_BR_01</li>
 </ol>
+</li>
+</ol>
+</li>
+<li>Combine OP &amp; AP together to retrieve all necessary component level data for the object build.</li>
+<li>Apply calculations and transformations on packaging data weights. See calculations section for more detail. <ol>
+<li>
 <details class="example" open="open">
 <summary>Calculations</summary>
-<p><strong>Secondary</strong><br />
+<strong>Secondary</strong><br />
 An item has secondary packaging, this is not sold to the consumer and will be for example a box containing multiple skus. We must divide the weight of this secondary component to give an actual value sold per item as to not inflate the overall packaging weight of the item.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>COMPONENT_WEIGHT / CASE_CRATE_SHIPPER_QTY
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Example :
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Case component weight = 352.59 g
-<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>Case crate shipper quantity = 12
-<a id="__codelineno-3-5" name="__codelineno-3-5" href="#__codelineno-3-5"></a>Secondary Calculated weight = 352.59/12 = 29.3 g
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>COMPONENT_WEIGHT / CASE_CRATE_SHIPPER_QTY
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Example :
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Case component weight = 352.59 g
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Case crate shipper quantity = 12
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a>Secondary Calculated weight = 352.59/12 = 29.3 g
 </code></pre></div>
 <strong>Tertiary</strong><br />
 Similar to the secondary calculation there is also tertiary packaging. This will usually be the pallet and any materials used to secure the pallet. Again we need to divide the weights to provide a correct weight per item.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>COMPONENT_WEIGHT / (CASE_CRATE_SHIPPER_QTY * TOTAL_CASES_PER_PALLET_LAYER_QTY)
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Example :
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Stretch Wrap component weight = 250
-<a id="__codelineno-4-4" name="__codelineno-4-4" href="#__codelineno-4-4"></a>Case crate shipper quantity = 12
-<a id="__codelineno-4-5" name="__codelineno-4-5" href="#__codelineno-4-5"></a>Case crate total cases per pallet = 42
-<a id="__codelineno-4-6" name="__codelineno-4-6" href="#__codelineno-4-6"></a>Tertiary Calculated weight = 250/(12*42) = 0.49603 g
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>COMPONENT_WEIGHT / (CASE_CRATE_SHIPPER_QTY * TOTAL_CASES_PER_PALLET_LAYER_QTY)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>Example :
+<a id="__codelineno-6-3" name="__codelineno-6-3" href="#__codelineno-6-3"></a>Stretch Wrap component weight = 250
+<a id="__codelineno-6-4" name="__codelineno-6-4" href="#__codelineno-6-4"></a>Case crate shipper quantity = 12
+<a id="__codelineno-6-5" name="__codelineno-6-5" href="#__codelineno-6-5"></a>Case crate total cases per pallet = 42
+<a id="__codelineno-6-6" name="__codelineno-6-6" href="#__codelineno-6-6"></a>Tertiary Calculated weight = 250/(12*42) = 0.49603 g
 </code></pre></div>
 <strong>Multipack Calculation</strong><br />
 This is the opposite of the previous two calculations. When we sell multipacks the weight assigned is only equivalent to one item. In this case we must multiply the weight by the no. of items in the pack.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>CONSUMER_PACK_QTY * COMPONENT_WEIGHT
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Example :
-<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>Component weight from Evolve for bottle = 34 gm
-<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a>Calculated Weight for Bottle = 4 * 34 gm = 136 gm
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>CONSUMER_PACK_QTY * COMPONENT_WEIGHT
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Example :
+<a id="__codelineno-7-3" name="__codelineno-7-3" href="#__codelineno-7-3"></a>Component weight from Evolve for bottle = 34 gm
+<a id="__codelineno-7-4" name="__codelineno-7-4" href="#__codelineno-7-4"></a>Calculated Weight for Bottle = 4 * 34 gm = 136 gm
 </code></pre></div>
 <strong>Recycled Weight Calculation</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>Calculated Recycled Content Weight =% Recycled Content * Calculated Component Weight
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>Calculated Recycled Content Weight =% Recycled Content * Calculated Component Weight
 </code></pre></div>
 <strong>Multiple supplier component Calculation</strong><br />
 A spefication and version has multiple suppliers of a component, for example in our data we will have three entries against a bottle, however only one bottle will have sold in the store. Therefore we have to take this into consideration when building both fact views. For packaging we have worked out the average value of the three components, then divided by the no. of components to give an accurate figure when rolling up to the views consumed by the business:
-<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>Bottle 32g,Bottle 36g, Bottle 33g
-<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>Average value = 33.6 g / 3 = 11.2 g
-</code></pre></div></p>
-</details>
-<ol>
-<li>Aggregate sales volume from tran_dt to fin period num.</li>
-<li>Add in country data to sales volume by looking up sales_initiated_cd against location_cd in dim_location.</li>
-<li>Apply stock and sales logic for weighting multiple suppliers of an item. See business rules for more detail.</li>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Bottle 32g,Bottle 36g, Bottle 33g
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>Average value = 33.6 g / 3 = 11.2 g
+</code></pre></div></details>
+</li>
+</ol>
+</li>
+<li>Get NET_SALES_VOLUME, ITEM_CD, SALES_INITIATED_LOCATION_CD, FULFILMENT_CHANNEL_CD from AGG_FINANCE_PNL_METRIC to be able to combine sales data with packaging for tonnage statistics.</li>
+<li>Add in country data to BR table by looking up SALES_INITIATED_LOCATION_CD against LOCATION_CD in DIM_LOCATION.</li>
+<li>Apply stock and sales logic to allow weighting sales volume for multiple suppliers of an item.<ol>
+<li>
+<details class="info" open="open">
+<summary>Stock &amp; Sales Logic</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>Combine FACT_STORE_DELIVERY_ITEM &amp; FACT_DEPOT_STOCK to retrieve ITEM_CD, SUPPLIER_CD, STOCK_DT, SUPPLIER_QUANTITY
+</code></pre></div></details>
+</li>
+</ol>
+</li>
 <li>Combine sales data with packaging data.</li>
+<li>Add Valpak data into BR table.</li>
 <li>Apply tonnage calculations with sales and packaging data.</li>
 <li>Apply recycling advice cleaning to Evolve &amp; Valpak. Lookup adw_product_tran.evolve_valpak_recycle_advice_ref and return the cleaned column in the table output.</li>
 <li>Load transform schema to table.</li>
 <li>End.</li>
 </ol>
 <h2 id="diagram">Diagram</h2>
-<pre class="mermaid"><code>flowchart TD
-    A[Supplier Site] ---
-    B[Evolve Sat] ---
-    C[Advanced Packaging]---
-    D[Original Packaging]--&gt;E([Apply multipack,secondary &amp; tertiary calculations])--&gt;M
-    F[AGG FINANCE PNL METRIC]--&gt;G([Aggregate sales to fin period number])
-    --&gt; H([Join country information to sales data])--&gt;M
-    I[DIM_LOCATION]--&gt; H
-    J[FACT STORE DELIVERY ITEM]--&gt;L
-    K[FACT DEPOT STOCK]--&gt;L
-    L[Apply stock logic for multiple suppliers of an item]--&gt;M
-    M([Combine sales data with packaging data])--&gt;
-    N([Apply tonnage calculations with sales and packaging data])--&gt;
-    O([Apply recycling cleaning])--&gt;
-    P[ITEM_SPECIFICATION_COMPONENT_BR]
-    Q[Valpak]--&gt;M</code></pre>
+<pre class="mermaid"><code>flowchart LR
+subgraph "Get Item, Supplier &amp; Active Specifications"
+a("`Supplier Site`")
+b("`Evolve Sat`")
+c("Active Specs")
+a-- ITEM_NK1,ITEM_NK2 --&gt;c
+b-- ITEM_NK1,ITEM_NK2 --&gt;c
+end 
+subgraph "Get Packaging Details"
+d(advanced packaging)
+e(original packaing)
+f(((union)))
+g(apply packaging calculations)
+d--&gt;f
+e--&gt;f
+f--&gt;g
+end
+subgraph "Get Finance Data"
+h(AGG_FINANCE_PNL_METRIC)
+i(DIM_LOCATION)
+j(Retrieve country info)
+r(CTE containing ITEM,SALE DATE,SALES VOLUME, CHANNEL, COUNTRY)
+h-- SALES_INITIATED_LOCATION_CD --&gt;j
+i-- SALES_INITIATED_LOCATION_CD --&gt;j
+j--&gt;r
+end
+subgraph "Apply Stock &amp; Depot Logic"
+k(FACT_STORE_DELIVERY_ITEM)
+l(FACT_DEPOT_STOCK)
+m(((union)))
+n(CTE containing Supplier,Date,Supplier Weights)
+k--&gt;m
+l--&gt;m
+m--&gt;n
+end
+p[Combine Specs &amp; Packaging]
+g--&gt;p
+c--&gt;p
+q[Combine Packaging With Sales]
+r--&gt;q
+p--&gt;q
+s[Apply Supplier Splits]
+q--&gt;s
+n--&gt;s
+t[Apply Final Tonnage Calculations]
+s--&gt;t
+u(ITEM_SPECIFICATION_COMPONENT_BR)
+t--&gt;u
+x(Valpak)
+x--&gt;t</code></pre>
 <h2 id="tests-checks">Tests &amp; Checks</h2>
+<p>Original Tests:</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Secondary &amp; Tertiary calculations applied</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Multipack calculations applied</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Supplier weighting applied</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Sales volume is the same in br table as source</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Tonnage and recycled tonnage calculations are verified</li>
+</ul>
+<p>New Tests:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Fulfilment channel &amp; Tran_DT incorporated into table</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> Enhanced supplier cleaning added</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New filter conditions for TRAN_DT from AGG_FINANCE_PNL_METRIC have been applied</li>
 </ul>
 
 
