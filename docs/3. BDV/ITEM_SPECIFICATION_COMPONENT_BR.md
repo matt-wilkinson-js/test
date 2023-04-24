@@ -1,6 +1,6 @@
 # ITEM_SPECIFICATION_COMPONENT_BR
 
-**Last Edited: 21/04/2022**
+**Last Edited: 24/04/2022**
 
 ## Description
 
@@ -187,3 +187,4 @@ New Tests:
 
 - [ ] Fulfilment channel & Tran_DT incorporated into table
 - [ ] Enhanced supplier cleaning added
+- [ ] New filter conditions for TRAN_DT from AGG_FINANCE_PNL_METRIC have been applied
