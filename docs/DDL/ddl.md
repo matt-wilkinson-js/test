@@ -1,5 +1,5 @@
 #### ITEM_SPECIFICATION_COMPONENT_BR
-```sql
+```
 CREATE OR REPLACE TABLE ADW_BDV.ITEM_SPECIFICATION_COMPONENT_BR
 (
  ITEM_CD                   number(38,0) NOT NULL COMMENT 'ITEM code',
@@ -37,7 +37,7 @@ VALID_TO_TS',
 COMMENT = 'This table combines Valpak & Evolve packaging data with sales to calculate the plastic and other material output in tonnes.';
 ```
 #### AGG_ITEM_PRIMARY_PLASTICS
-``` sql
+```
 CREATE OR REPLACE VIEW ADW_PRODUCT_PL.AGG_ITEM_PRIMARY_PLASTICS
 (
  ITEM_CD              COMMENT 'ITEM code',
@@ -56,7 +56,7 @@ CREATE OR REPLACE VIEW ADW_PRODUCT_PL.AGG_ITEM_PRIMARY_PLASTICS
 COMMENT = 'An aggregated table based off ITEM_SPECIFICATION_COMPONENT_BR to fit the requirements of the Plan for Better Commercial dashboard.';
 ```
 #### FACT_ITEM_SPECIFICATION_COMPONENT
-``` sql
+```
 CREATE OR REPLACE VIEW ADW_PRODUCT_PL.FACT_ITEM_SPECIFICATION_COMPONENT
 (
  ITEM_CD                   COMMENT 'ITEM code',
