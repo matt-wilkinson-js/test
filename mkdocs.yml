@@ -5,7 +5,6 @@ nav:
   - Staging: Staging
   - Raw Data Vault: Raw Data Vault
   - Business Data Vault: Business Data Vault
-    - Item Specification Component BR: Business Data Vault/ITEM_SPECIFICATION_COMPONENT_BR
   - Presentation Layer: Presentation Layer
 theme:
   name: material
