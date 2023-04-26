@@ -1,4 +1,4 @@
-# Homepage
+# Home
 
 ## About
 Data architecture mapping specifications for data product dp-c3fn-packaging
