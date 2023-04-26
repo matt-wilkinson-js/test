@@ -43,7 +43,7 @@ These tables are assumed to be unioned in the spec and will have the name OP, AP
 
 Target system for this object is ADW_BDV.
 
-{{ read_excel('/Users/matt.wilkinson/Desktop/Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="Target to Source") }}
+{{ read_excel('test/Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="Target to Source") }}
 
 ## Mapping Steps
 

@@ -18,7 +18,7 @@ This object is built from ITEM_SPECIFICATION_COMPONENT_BR, that tables time gran
 
 ## Target to Source
 
-{{ read_excel('/Users/matt.wilkinson/Desktop/Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="FACT_ITEM_SPECIFICATION_COMPONE") }} 
+{{ read_excel('test/Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="FACT_ITEM_SPECIFICATION_COMPONE") }} 
 
 ## Mapping Steps
 
