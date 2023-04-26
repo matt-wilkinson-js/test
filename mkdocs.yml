@@ -2,10 +2,14 @@ site_name: dp-c3fn-packaging
 site_url: https://mappingspecexample.com/
 nav:
   - Home: "index.md"
-  - Staging: "Staging"
-  - Raw Data Vault: "Raw Data Vault"
-  - Business Data Vault: "Business Data Vault"
-  - Presentation Layer: "Presentation Layer"
+  - Staging:
+    - test: Staging/test.md
+  - Raw Data Vault:
+    - test: Raw Data Vault/test.md
+  - Business Data Vault: "Business Data Vault/ITEM_SPECIFICATION_COMPONENT_BR.md"
+  - Presentation Layer:
+    - Agg Item Primary Plastics: Presentation Layer/AGG_ITEM_PRIMARY_PLASTICS.md
+    - Fact Item Specification Component: Presentation Layer/FACT_ITEM_SPECIFICATION_COMPONENT.md
 theme:
   name: material
   features:
