@@ -4,7 +4,7 @@ nav:
   - Home: "index.md"
   - Staging: Staging
   - Raw Data Vault: Raw Data Vault
-  - Business Data Vault: Business Data Vault
+  - Business Data Vault: Business Data Vault/BDV.md
   - Presentation Layer: Presentation Layer
 theme:
   name: material
