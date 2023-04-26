@@ -1,20 +1,27 @@
 site_name: dp-c3fn-packaging
 site_url: https://mappingspecexample.com/
 nav:
-  - Home: "index.md"
+  - Home: 
+    - About: "index.md"
+    - Installation Instructions: "README.md"
   - Staging:
     - test: Staging/test.md
   - Raw Data Vault:
-    - Hubs: Raw Data Vault/hub.md
-    - Hubs: Raw Data Vault/test.md
-    - Satellites: Raw Data Vault/test.md
-    - Links: Raw Data Vault/test.md
+    - Hubs: 
+      - Hub Test 1: Raw Data Vault/hub.md
+      - Hub Test 2: Raw Data Vault/test.md
+    - Satellites: 
+      - Sat Test 1: Raw Data Vault/test.md
+    - Links: 
+      - Link Test 1: Raw Data Vault/test.md
   - Business Data Vault: 
     - Item Specification Component BR: Business Data Vault/ITEM_SPECIFICATION_COMPONENT_BR.md
   - Presentation Layer:
     - Facts:
       - Agg Item Primary Plastics: Presentation Layer/AGG_ITEM_PRIMARY_PLASTICS.md
       - Fact Item Specification Component: Presentation Layer/FACT_ITEM_SPECIFICATION_COMPONENT.md
+    - Dimensions:
+      - Dim Test 1: Presentation Layer/test.md
 theme:
   name: material
   features:
@@ -22,6 +29,8 @@ theme:
     - navigation.sections
     - toc.integrate
     - navigation.top
+    - navigation.expand
+    - navigation.path
     - search.suggest
     - search.highlight
     - content.tabs.link
