@@ -1,6 +1,6 @@
 # FACT_ITEM_SPECIFICATION_COMPONENT
 
-**Last Edited: 24/04/2022**
+**Last Edited: 27/04/2022**
 
 ## Description
 
@@ -22,10 +22,13 @@ This object is built from ITEM_SPECIFICATION_COMPONENT_BR, that tables time gran
 
 ## Mapping Steps
 
-
+Not required for this build
 
 ## Diagram
 
 Not required for this build
 
 ## Tests & Checks 
+
+[x] Object is aggregated to calendar month
+[x] Object metrics deaggregate to source table values

@@ -1,5 +1,7 @@
+# Site Details
 site_name: dp-c3fn-packaging
 site_url: https://mappingspecexample.com/
+# Site Navigation
 nav:
   - Home: 
     - About: "index.md"
@@ -22,6 +24,7 @@ nav:
       - Fact Item Specification Component: Presentation Layer/FACT_ITEM_SPECIFICATION_COMPONENT.md
     - Dimensions:
       - Dim Test 1: Presentation Layer/test.md
+# Theme Details      
 theme:
   name: material
   features:
@@ -53,10 +56,10 @@ theme:
       accent: green
   icon:
     repo: fontawesome/brands/github
-    
+# Font    
   font:
     text: Mary Ann
-
+# Markdown Extensions
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -81,10 +84,10 @@ markdown_extensions:
   - pymdownx.tasklist:
       custom_checkbox: true
   - tables
- 
+# Github Links 
 repo_name: dp-c3fn-packaging
 repo_url: https://github.com/sainsburys-tech/dp-c3fn-packaging/tree/PFBP-290
-
+# Document Plugins
 plugins:
   - search
   - markdown-filter
