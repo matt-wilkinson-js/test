@@ -1,1 +1,0 @@
-This hosts all objects in the BDV layer.
