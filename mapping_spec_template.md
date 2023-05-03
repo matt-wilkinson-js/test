@@ -15,9 +15,9 @@
 <li>Add sequential steps here</li>
 </ol>
 <h2>Diagram</h2>
-<p>```mermaid
-flowchart LR</p>
-<p>```</p>
+<p><code>mermaid
+flowchart LR
+a--&gt;b</code></p>
 <h2>Tests &amp; Checks</h2>
 <p>Add tests &amp; checks here
 [x]
