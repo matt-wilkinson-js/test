@@ -14,9 +14,8 @@ This object is an aggregated fact view for the P4B Commercial dashboard. Contain
 
 ## Selection Criteria
 
-This object is built from ITEM_SPECIFICATION_COMPONENT_BR, that tables time granulairty is date. For this view financial month is required, lookup TRAN_DT against DIM_DATE.DATE_DT and return FIN_PERIOD_NUM.
+This object needs to be filtered down to only include Primary Plastics.
 
-This object also needs to be filtered down to only include Primary Plastics.
 ```
 * Concatenate the below primary keys in ITEM_SPECIFICATION_COMPONENT_BR:  
     * ITEM_CD
@@ -34,10 +33,54 @@ This object also needs to be filtered down to only include Primary Plastics.
 
 ## Mapping Steps
 
-1. Apply necessary selection criteria on ITEM_SPECIFICATION_COMPONENT_BR
-1. Create a CTE containing financial periods as per selection criteria
-1. Join the CTE to ITEM_SPECIFICATION_COMPONENT_BR using TRAN_DT and DATE_DT
-1. Create groupings and sums
+1. Get Group Supplier from ADW_RDV.SUPPLIER_GROUP_SISUPG_REF join using ALPHANUMERIC_SUPPLIER_CD
+1. Create a CTE that captures:
+    ```
+    ITEM_CD
+    FIN_PERIOD_NUM
+    GROUP_SUPPLIER_CD
+    RECYCLING_ADVICE_CD
+    COUNTRY
+    SUM(SALES_VOLUME)
+    ```
+    This is to ensure that when we create our tonnage calculations, all the sales volume is being considered rather than an apportioned amount.
+1. Create another CTE that captures:
+    ```
+    ITEM_CD
+    FIN_PERIOD_NUM
+    GROUP_SUPPLIER_CD
+    RECYCLING_ADVICE_CD
+    COUNTRY
+    SUM(COMPONENT_WEIGHT)
+    SUM(COMPONENT_RECYCLED_WEIGHT)
+    COMPONENT_RECYCLED_WEIGHT/COMPONENT_WEIGHT AS RECYCLED_WEIGHT_PCT
+    ```
+    This is going to capture all our primary plastics information.
+1. Filter the CTE using the Selection criteria given.
+1. Inner Join both tables using:
+    ```
+    ITEM_CD
+    FIN_PERIOD_NUM
+    GROUP_SUPPLIER_CD
+    RECYCLING_ADVICE_CD
+    COUNTRY
+    ```
+    This creates a table that will have the correct sales volume and weight metrics for applying our tonnage calculations.
+1. Join to DIM_ITEM on ITEM_CD, this is to capture a new tonnage calculation which uses:
+    1. WEIGHED_AT_CHECKOUT_FLAG
+    1. CATCHWEIGHT_FLAG
+1. Create total tonnage calculation:
+    ```
+    WHEN CATCHWEIGHT_FLAG = 'Y' OR WEIGHED_AT_CHECKOUT_FLAG = 'Y'
+    THEN SALES_VOLUME/1000
+    ELSE 
+    SALES_VOLUME * ITEM_WEIGHT/1000000 
+    ```
+1. Sum recycled tonnage cirectly from the table
+1. Final calculation is recyclability_pct, this captures how much product could be recycled in the future:
+    ```
+    TOTAL_TONNAGE(FILTERED WITH RECYCLING_ADVICE_ICONS)/TOTAL_TONNAGE
+    ```
 1. End
 
 ## Diagram
@@ -46,6 +89,9 @@ Not required for this build
 
 ## Tests & Checks 
 
-[x] Object is filtered to Primary plastic
-[x] Object is aggregated to financial periods
-[x] Sales volume and weights deaggregate to source numbers
+Please evidence examples of the below.
+
+- [ ] Object is filtered to Primary plastic
+- [ ] Object has aligned Sales Volume to AGG_FINANCE_PNL_METRIC/ITEM_SPECIFICATION_COMPONENT_BR
+- [ ] Tonnage calculation is split as per case statement
+- [ ] Tonnage calculations are working as expected
