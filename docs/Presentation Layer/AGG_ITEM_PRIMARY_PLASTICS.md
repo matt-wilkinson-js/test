@@ -77,10 +77,6 @@ This object needs to be filtered down to only include Primary Plastics.
     SALES_VOLUME * ITEM_WEIGHT/1000000 
     ```
 1. Sum recycled tonnage cirectly from the table
-1. Final calculation is recyclability_pct, this captures how much product could be recycled in the future:
-    ```
-    TOTAL_TONNAGE(FILTERED WITH RECYCLING_ADVICE_ICONS)/TOTAL_TONNAGE
-    ```
 1. End
 
 ## Diagram
@@ -91,6 +87,7 @@ Not required for this build
 
 Please evidence examples of the below.
 
+- [ ] Unique row per primary key, ITEM_CD,GROUP_SUPPLIER_CD,RECYCLING_ADVICE_ICON,COUNTRY,FIN_PERIOD_NUM
 - [ ] Object is filtered to Primary plastic
 - [ ] Object has aligned Sales Volume to AGG_FINANCE_PNL_METRIC/ITEM_SPECIFICATION_COMPONENT_BR
 - [ ] Tonnage calculation is split as per case statement
