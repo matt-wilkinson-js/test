@@ -11,6 +11,5 @@ CREATE OR REPLACE VIEW ADW_PRODUCT_PL.AGG_ITEM_PRIMARY_PLASTICS
  SALES_VOLUME         COMMENT 'Sales units.',
  TOTAL_TONNAGE        COMMENT 'Calculation to show plastic tonnage output.',
  RECYCLED_TONNAGE     COMMENT 'Calculation for recycled tonnage.',
- RECYCLABILITY_PCT    COMMENT 'Calculation for showing how much of the item can be recycled in future.'
 )
 COMMENT = 'An aggregated table based off ITEM_SPECIFICATION_COMPONENT_BR to fit the requirements of the Plan for Better Commercial dashboard.';
