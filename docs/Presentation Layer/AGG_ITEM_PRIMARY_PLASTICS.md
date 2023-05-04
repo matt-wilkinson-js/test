@@ -22,7 +22,7 @@ This object needs to be filtered down to only include Primary Plastics.
     * SPECIFICATION_VERSION_CD
     * PACKAGING_CD
     * COMPONENT_CD  
-* Join to DIM_PACKAGING_COMPONENT using this key
+* Join to DIM_PACKAGING_COMPONENT using PACKAGING_COMPONENT_CD
 * Filter PACKAGING_COMPONENT_LEVEL_CD = Primary
 * Filter PACKAGING_COMPONENT_BASE_MATERIAL_DESC = Plastic
 ```
