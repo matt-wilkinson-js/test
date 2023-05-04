@@ -4,7 +4,7 @@ CREATE OR REPLACE VIEW ADW_PRODUCT_PL.AGG_ITEM_PRIMARY_PLASTICS
  GROUP_SUPPLIER_CD    COMMENT 'Group Supplier Code',
  RECYCLING_ADVICE_CD  COMMENT 'Recycling Advice',
  COUNTRY              COMMENT 'Country',
- CALNDR_PERIOD_NUM    COMMENT 'Calendar month.',
+ FIN_PERIOD_NUM    COMMENT 'Calendar month.',
  ITEM_WEIGHT          COMMENT 'Weight of the items components.',
  ITEM_RECYCLED_WEIGHT COMMENT 'Weight of recycled content in the item.',
  RECYCLED_WEIGHT_PCT  COMMENT 'Percentage of the recycled content.',
