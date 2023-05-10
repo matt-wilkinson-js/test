@@ -1,6 +1,6 @@
 # AGG_ITEM_PRIMARY_PLASTICS
 
-**Last Edited: 27/04/2022**
+**Last Edited: 10/05/2022**
 
 ## Description
 
@@ -10,7 +10,9 @@ This object is an aggregated fact view for the P4B Commercial dashboard. Contain
 
 | Jira Ticket | Description | Function |
 |-------------|-------------|----------|
+|[PFBP_321](https://sainsburys-jira.valiantys.net/browse/PFBP-321)| Original build|Architecture & Engineering
 |[PFBP_381](https://sainsburys-jira.valiantys.net/browse/PFBP-381)| Analysis for adding in fulfilment channel and calendar reporting | Architecture
+|[PFBP_398](https://sainsburys-jira.valiantys.net/browse/PFBP-398)| Adding in new tonnage calculation for loose items, fixing duplicate rows and recycled weight pct calculation| Engineering
 
 ## Selection Criteria
 
@@ -49,7 +51,6 @@ This object needs to be filtered down to only include Primary Plastics.
     ITEM_CD
     FIN_PERIOD_NUM
     GROUP_SUPPLIER_CD
-    RECYCLING_ADVICE_CD
     COUNTRY
     SUM(COMPONENT_WEIGHT)
     SUM(COMPONENT_RECYCLED_WEIGHT)
@@ -77,6 +78,7 @@ This object needs to be filtered down to only include Primary Plastics.
     SALES_VOLUME * ITEM_WEIGHT/1000000 
     ```
 1. Sum recycled tonnage cirectly from the table
+1. Apply recycled weight pct calculation
 1. End
 
 ## Diagram
@@ -92,3 +94,4 @@ Please evidence examples of the below.
 - [ ] Object has aligned Sales Volume to AGG_FINANCE_PNL_METRIC/ITEM_SPECIFICATION_COMPONENT_BR
 - [ ] Tonnage calculation is split as per case statement
 - [ ] Tonnage calculations are working as expected
+- [ ] Recycled weight percentage has been calculated as expected
