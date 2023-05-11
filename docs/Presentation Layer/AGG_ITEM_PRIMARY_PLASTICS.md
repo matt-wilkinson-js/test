@@ -89,9 +89,13 @@ Not required for this build
 
 Please evidence examples of the below.
 
-- [ ] Unique row per primary key, ITEM_CD,GROUP_SUPPLIER_CD,RECYCLING_ADVICE_ICON,COUNTRY,FIN_PERIOD_NUM
-- [ ] Object is filtered to Primary plastic
-- [ ] Object has aligned Sales Volume to AGG_FINANCE_PNL_METRIC/ITEM_SPECIFICATION_COMPONENT_BR
-- [ ] Tonnage calculation is split as per case statement
-- [ ] Tonnage calculations are working as expected
-- [ ] Recycled weight percentage has been calculated as expected
+Evidence provided by Govind Seenivasan
+
+[Evidence Spreadsheet](https://jsainsbury.sharepoint.com/:x:/r/teams/P4B/_layouts/15/Doc.aspx?sourcedoc=%7Bcdf038d4-7a2e-42dd-90ec-08301b258623%7D&action=edit&activeCell=%27Step%204%20V2%27!F18&wdinitialsession=b2ad8817-e1b2-45a9-b60b-b24fb5ffbf0e&wdrldsc=2&wdrldc=1&wdrldr=AccessTokenExpiredWarning%2CRefreshingExpiredAccessT)
+
+- [x] Unique row per primary key, ITEM_CD,GROUP_SUPPLIER_CD,RECYCLING_ADVICE_ICON,COUNTRY,FIN_PERIOD_NUM
+- [x] Object is filtered to Primary plastic
+- [x] Object has aligned Sales Volume to AGG_FINANCE_PNL_METRIC/ITEM_SPECIFICATION_COMPONENT_BR
+- [x] Tonnage calculation is split as per case statement
+- [x] Tonnage calculations are working as expected
+- [x] Recycled weight percentage has been calculated as expected

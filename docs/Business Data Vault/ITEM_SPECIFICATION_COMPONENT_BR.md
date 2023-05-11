@@ -105,7 +105,13 @@ Target system for this object is ADW_BDV.
         Bottle 32g,Bottle 36g, Bottle 33g
         Average value = 33.6 g / 3 = 11.2 g
         ```
-1. Get NET_SALES_VOLUME, ITEM_CD, SALES_INITIATED_LOCATION_CD, FULFILMENT_CHANNEL_CD from AGG_FINANCE_PNL_METRIC to be able to combine sales data with packaging for tonnage statistics.
+1. Get TRAN_DT, NET_SALES_VOLUME, ITEM_CD, SALES_INITIATED_LOCATION_CD, FULFILMENT_CHANNEL_CD from AGG_FINANCE_PNL_METRIC to be able to combine sales data with packaging for tonnage statistics.
+    ```
+    SELECT TRAN_DT, NET_SALES_VOLUME, ITEM_CD, SALES_INITIATED_LOCATION_CD, FULFILMENT_CHANNEL_CD  
+    FROM adw_prod.adw_finance_pl.agg_finance_pnl_metric  
+    INNER JOIN adw_prod.adw_reference_pl.dim_date ON tran_dt = date_dt  
+    WHERE clndr_dt_id BETWEEN to_char(dateadd(DAYS, -756, current_date()), 'YYYYMMDD')AND to_char(current_date(), 'YYYYMMDD')
+    ```
 1. Add in country data to BR table by looking up SALES_INITIATED_LOCATION_CD against LOCATION_CD in DIM_LOCATION.
 1. Apply stock and sales logic to allow weighting sales volume for multiple suppliers of an item.
     1. ???+ info "Stock & Sales Logic"
@@ -188,3 +194,4 @@ New Tests:
 - [ ] Fulfilment channel & Tran_DT incorporated into table
 - [ ] Enhanced supplier cleaning added
 - [ ] New filter conditions for TRAN_DT from AGG_FINANCE_PNL_METRIC have been applied
+- [ ] Specification weight at end of the month is applied to whole period
