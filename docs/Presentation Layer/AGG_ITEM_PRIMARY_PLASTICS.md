@@ -25,7 +25,7 @@ This object needs to be filtered down to only include Primary Plastics.
     * PACKAGING_CD
     * COMPONENT_CD  
 * Join to DIM_PACKAGING_COMPONENT using PACKAGING_COMPONENT_CD
-* Filter PACKAGING_COMPONENT_LEVEL_CD = Primary
+* Filter PACKAGING_COMPONENT_LEVEL = Primary
 * Filter PACKAGING_COMPONENT_BASE_MATERIAL_DESC = Plastic
 ```
 
