@@ -69,20 +69,52 @@ Add tests & checks here
 [ ]
     ''')
 
+<<<<<<< Updated upstream:Template scripts/final script.py
 with open('mapping_spec_template.md','w') as f:
     f.write(mapping_spec_template)
 # create new directory folders    
 os.mkdir(".github")    
 os.mkdir("docs")
+=======
+# create new directory folders  
+if not os.path.exists(".github"): os.mkdir(".github")    
+if not os.path.exists("docs"): os.mkdir("docs")
+>>>>>>> Stashed changes:Template scripts/mkdocs_install.py
 os.chdir('docs')
 # Add index file and data vault folders
 index = markdown.markdown('about')
 with open('index.md','w') as f:
     f.write(index)
+<<<<<<< Updated upstream:Template scripts/final script.py
 os.makedirs("Staging")
 os.makedirs("Raw Data Vault")
 os.makedirs("Business Data Vault")
 os.makedirs("Presentation Layer")
+=======
+if not os.path.exists("Staging"):
+    os.makedirs("Staging")
+    os.chdir("Staging")
+    with open('mapping_spec_template.md','w') as f:
+        f.write(mapping_spec_template)
+os.chdir("..")
+if not os.path.exists("Raw Data Vault"):
+    os.makedirs("Raw Data Vault")
+    os.chdir("Raw Data Vault")
+    with open('mapping_spec_template.md','w') as f:
+        f.write(mapping_spec_template)
+os.chdir("..")
+if not os.path.exists("Business Data Vault"):
+    os.makedirs("Business Data Vault")
+    os.chdir("Business Data Vault")
+    with open('mapping_spec_template.md','w') as f:
+        f.write(mapping_spec_template)
+os.chdir("..")
+if not os.path.exists("Presentation Layer"):
+    os.makedirs("Presentation Layer")
+    os.chdir("Presentation Layer")
+    with open('mapping_spec_template.md','w') as f:
+        f.write(mapping_spec_template)
+>>>>>>> Stashed changes:Template scripts/mkdocs_install.py
 # Change path to github
 path
 os.chdir(path)
