@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#insert-rdv-object-name-here" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -471,10 +476,85 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          RDV Objects
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         RDV Objects
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira-tickets" class="md-nav__link">
+    Jira Tickets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#selection-criteria" class="md-nav__link">
+    Selection Criteria
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#target-to-source" class="md-nav__link">
+    Target to Source
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mapping-steps" class="md-nav__link">
+    Mapping Steps
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagram" class="md-nav__link">
+    Diagram
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tests-checks" class="md-nav__link">
+    Tests &amp; Checks
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -607,45 +687,275 @@
   
 
 
-<h1>Add object name</h1>
-<p><strong> Last Edited: </strong></p>
-<h2>Description</h2>
-<p>Add description of the object</p>
-<h2>Jira Tickets</h2>
-<p>| Jira Ticket | Description | Function     |
-|-------------|-------------|--------------|
-|             |             | Architecture |</p>
-<h2>Selection Criteria</h2>
-<p>Add selection criteria for the object</p>
-<h2>Target to Source</h2>
-<p>| Target System   | Target Table/Xpath/JSON Schema/Other   | Target Column             | Transformation/Mapping rules                                            | Source System   | Source Table/Xpath/JSON Schema/Other   | Source Column             |
-|:----------------|:---------------------------------------|:--------------------------|:------------------------------------------------------------------------|:----------------|:---------------------------------------|:--------------------------|
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | ITEM_CD                   | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | ITEM_CD                   |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | SPECIFICATION_VERSION_CD  | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | SPECIFICATION_VERSION_CD  |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | PACKAGING_COMPONENT_CD    | Concat of ITEM_CD, SPECIFICATION_VERSION_CD, PACKAGING_CD, COMPONENT_CD | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | nan                       |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | ALPHANUMERIC_SUPPLIER_CD  | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | ALPHANUMERIC_SUPPLIER_CD  |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | RECYCLING_ADVICE_ICON     | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | RECYCLING_ADVICE_ICON     |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | COUNTRY                   | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | COUNTRY                   |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | CALNDR_PERIOD_NUM         | See selection criteria                                                  | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | TRAN_DT                   |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | FULFILMENT_CHANNEL_CD     | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | FULFILMENT_CHANNEL_CD     |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | COMPONENT_WEIGHT          | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | COMPONENT_WEIGHT          |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | COMPONENT_RECYCLED_WEIGHT | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | COMPONENT_RECYCLED_WEIGHT |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | RECYCLED_WEIGHT_PCT       | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | RECYCLED_WEIGHT_PCT       |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | SALES_VOLUME              | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | SALES_VOLUME              |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | TOTAL_TONNAGE             | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | TOTAL_TONNAGE             |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | RECYCLED_TONNAGE          | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | RECYCLED_TONNAGE          |</p>
-<h2>Mapping Steps</h2>
+<h1 id="insert-rdv-object-name-here">INSERT RDV OBJECT NAME HERE</h1>
+<p><strong>Last Edited: DD/MM/YYYY</strong></p>
+<h2 id="description">Description</h2>
+<p>Provide a brief description of the RDV object, include any specifics around the business context and BDV/PL objects dependent as applicable.</p>
+<h2 id="jira-tickets">Jira Tickets</h2>
+<table>
+<thead>
+<tr>
+<th>Jira Ticket</th>
+<th>Description</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://sainsburys-jira.valiantys.net">Include JIRA Ticket number &amp; URL</a></td>
+<td>High Level Description</td>
+<td>Involved Function. E.g. Engineering, Architecture</td>
+</tr>
+</tbody>
+</table>
+<h2 id="selection-criteria">Selection Criteria</h2>
+<p>Provide detailed description of the sources used to populate the RDV Object. Include the business entities that link to the sources used with examples, plus any filters applied while ingesting from source. Include details of any RDV/BDV objects used to populate this BDV object.</p>
+<p><strong>Source Criteria</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>Include filters applied here.
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>Duplicate this section if multiple filters apply.
+</code></pre></div></p>
+<h2 id="target-to-source">Target to Source</h2>
+<p>Include the table names to be combined and mapped in the specification.
+You can use aliases such as:</p>
+<ul>
+<li><code>&lt;SCHEMA_NAME&gt;.&lt;TABLE_NAME&gt;</code> as <code>A</code></li>
+<li><code>&lt;SCHEMA_NAME&gt;.&lt;TABLE_NAME&gt;</code> as <code>B</code></li>
+</ul>
+<p>Target system for this object is ADW_BDV.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Target System</th>
+<th align="left">Target Table/Xpath/JSON Schema/Other</th>
+<th align="left">Target Column</th>
+<th align="left">Transformation/Mapping rules</th>
+<th align="left">Source System</th>
+<th align="left">Source Table/Xpath/JSON Schema/Other</th>
+<th align="left">Source Column</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+<tr>
+<td align="left">ADW_RDV</td>
+<td align="left">RDV_OBJECT_NAME</td>
+<td align="left">COLUMN_NAME</td>
+<td align="left">Add selection rule</td>
+<td align="left">SOURCE_SCHEMA_NAME</td>
+<td align="left">SOURCE_OBJECT_NAME</td>
+<td align="left">SOURCE_COLUMN_NAME</td>
+</tr>
+</tbody>
+</table>
+<h2 id="mapping-steps">Mapping Steps</h2>
 <ol>
-<li>Add sequential steps here</li>
+<li>Create steps to detail how the data is selected correctly, including but not limited to: Data cleansing, De-duplication &amp; Business rules applied.</li>
+<li>For example, any cleansing steps can be documented through code blocks, as can be seen in the below example.<ol>
+<li>Data Cleansing<ol>
+<li>
+<details class="warning" open="open">
+<summary>Dataset Cleaning - Duplicate each of the sections below based on the complexity of logic</summary>
+<strong>Remove Dummy Data</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Remove COLUMN_NAME= &quot;&quot; when COLUMN_NAME contains &quot;DO NOT USE&quot;
+</code></pre></div>
+<strong>Clean Source Data</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Trim COLUMN_NAME having leading/trailing spaces
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Remove specific pattern based values found in COLUMN_NAME
+</code></pre></div></details>
+</li>
 </ol>
-<h2>Diagram</h2>
-<p><code>mermaid
-flowchart LR
-a--&gt;b</code></p>
-<h2>Tests &amp; Checks</h2>
-<p>Add tests &amp; checks here
-[x]
-[ ]</p>
+</li>
+</ol>
+</li>
+<li>Apply calculations based on the relevant business logic. See calculation section below for more detail:<ol>
+<li>
+<details class="example" open="open">
+<summary>Calculations - Duplicate each of the sections below based on the complexity of logic and number of calculated attributes/metrics</summary>
+<strong>Calculation 1</strong><br />
+Provide a definition of the calculated metric and business logic applicable for the same.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Provide the logic/formula used for the calculation - Include the column names used as well.
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Example :
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Provide an example based on values from dependent columns to explain the desired outcome for the calculation.
+</code></pre></div>
+<strong>Calculation 2</strong><br />
+Provide a definition of the calculated metric and business logic applicable for the same.
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Provide the logic/formula used for the calculation - Include the column names used as well.
+<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Example :
+<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Provide an example based on values from dependent columns to explain the desired outcome for the calculation.
+</code></pre></div></details>
+</li>
+</ol>
+</li>
+<li>
+<p>Document any logic involving combining datasets at various points of the mapping steps using the section below:</p>
+<ol>
+<li>
+<details class="info" open="open">
+<summary>Table Logic</summary>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Lookup TABLE_NAME_A USING COLUMN_A &amp; COLUMN_B to retrieve COLUMN_C
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Combine TABLE_NAME_A &amp; TABLE_NAME_B using COLUMN_A &amp; COLUMN_B
+</code></pre></div></details>
+</li>
+<li>Combine all of the above datasets.</li>
+<li>Load transform schema to table.</li>
+<li>End.</li>
+</ol>
+</li>
+</ol>
+<h2 id="diagram">Diagram</h2>
+<pre class="mermaid"><code>flowchart LR
+subgraph "Join 2 Datasets"
+a("TABLE_NAME_A")
+b("TABLE_NAME_B")
+c("TABLE_NAME_C")
+a-- COLUMN_1,COLUMN_2 --&gt;c
+b-- COLUMN_1,COLUMN_2 --&gt;c
+end 
+subgraph "Combine 2 Datasets via Union"
+d("TABLE_NAME_D")
+e("TABLE_NAME_E")
+f(((union)))
+g("Apply Dataset Calculations")
+d--&gt;f
+e--&gt;f
+f--&gt;g
+end
+p[Combine Dataset Calculations &amp; TABLE_NAME_C]
+g--&gt;p
+c--&gt;p
+u(TARGET_BDV_OBJECT_NAME)
+p--&gt;u</code></pre>
+<h2 id="tests-checks">Tests &amp; Checks</h2>
+<p>Original Tests (These are based on the mapping steps):</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Calculations Applied (Duplicate as required with specifics)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Business Logic Applied (Duplicate as required with specifics)</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> BDV Reconciles with Source/Equivalent Datasets based on set criteria</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Calculations verified &amp; signed off by Business/End User</li>
+</ul>
+<p>New Tests (To be defined post handover - Duplicate as required):</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New Test Scenario 1</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New Test Scenario 2</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New Test Scenario 3</li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New Test Scenario 4</li>
+</ul>
 
 
 

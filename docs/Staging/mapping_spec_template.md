@@ -1,24 +1,26 @@
-<h1>Add object name</h1>
-<p><strong> Last Edited: </strong></p>
-<h2>Description</h2>
-<p>Add description of the object</p>
-<h2>Jira Tickets</h2>
-<p>| Jira Ticket | Description | Function     |
-|-------------|-------------|--------------|
-|             |             | Architecture |</p>
-<h2>Selection Criteria</h2>
-<p>Add selection criteria for the object</p>
-<h2>Target to Source</h2>
-<p>{{ read_excel('..\\Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="FACT_ITEM_SPECIFICATION_COMPONE") }}</p>
-<h2>Mapping Steps</h2>
-<ol>
-<li>Add sequential steps here</li>
-</ol>
-<h2>Diagram</h2>
-<p><code>mermaid
+# INSERT STAGE OBJECT NAME HERE
+
+**Last Edited: DD/MM/YYYY**
+
+## Description
+
+Provide a brief description of the stage table, include specifics of source and the use case for ASPIRe.
+
+## Jira Tickets
+
+| Jira Ticket | Description | Function |
+|-------------|-------------|----------|
+|[Include JIRA Ticket number & URL](https://sainsburys-jira.valiantys.net)| High Level Description |Involved Function. E.g. Engineering, Architecture|
+
+## Diagram
+
+```mermaid
 flowchart LR
-a--&gt;b</code></p>
-<h2>Tests &amp; Checks</h2>
-<p>Add tests &amp; checks here
-[x]
-[ ]</p>
+subgraph "Source"
+d("Source System")
+e("Extract")
+d-->e
+end
+u(TARGET_STAGE_OBJECT_NAME)
+e-->u
+```

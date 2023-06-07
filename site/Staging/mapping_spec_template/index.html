@@ -72,6 +72,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#insert-stage-object-name-here" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -420,10 +425,57 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Stage Layer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         Stage Layer
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#jira-tickets" class="md-nav__link">
+    Jira Tickets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#diagram" class="md-nav__link">
+    Diagram
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -607,45 +659,36 @@
   
 
 
-<h1>Add object name</h1>
-<p><strong> Last Edited: </strong></p>
-<h2>Description</h2>
-<p>Add description of the object</p>
-<h2>Jira Tickets</h2>
-<p>| Jira Ticket | Description | Function     |
-|-------------|-------------|--------------|
-|             |             | Architecture |</p>
-<h2>Selection Criteria</h2>
-<p>Add selection criteria for the object</p>
-<h2>Target to Source</h2>
-<p>| Target System   | Target Table/Xpath/JSON Schema/Other   | Target Column             | Transformation/Mapping rules                                            | Source System   | Source Table/Xpath/JSON Schema/Other   | Source Column             |
-|:----------------|:---------------------------------------|:--------------------------|:------------------------------------------------------------------------|:----------------|:---------------------------------------|:--------------------------|
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | ITEM_CD                   | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | ITEM_CD                   |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | SPECIFICATION_VERSION_CD  | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | SPECIFICATION_VERSION_CD  |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | PACKAGING_COMPONENT_CD    | Concat of ITEM_CD, SPECIFICATION_VERSION_CD, PACKAGING_CD, COMPONENT_CD | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | nan                       |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | ALPHANUMERIC_SUPPLIER_CD  | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | ALPHANUMERIC_SUPPLIER_CD  |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | RECYCLING_ADVICE_ICON     | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | RECYCLING_ADVICE_ICON     |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | COUNTRY                   | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | COUNTRY                   |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | CALNDR_PERIOD_NUM         | See selection criteria                                                  | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | TRAN_DT                   |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | FULFILMENT_CHANNEL_CD     | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | FULFILMENT_CHANNEL_CD     |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | COMPONENT_WEIGHT          | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | COMPONENT_WEIGHT          |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | COMPONENT_RECYCLED_WEIGHT | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | COMPONENT_RECYCLED_WEIGHT |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | RECYCLED_WEIGHT_PCT       | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | RECYCLED_WEIGHT_PCT       |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | SALES_VOLUME              | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | SALES_VOLUME              |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | TOTAL_TONNAGE             | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | TOTAL_TONNAGE             |
-| ADW_PRODUCT_PL  | FACT_ITEM_SPECIFICATION_COMPONENT      | RECYCLED_TONNAGE          | Direct from BR                                                          | ADW_BDV         | ITEM_SPECIFICATION_COMPONENT_BR        | RECYCLED_TONNAGE          |</p>
-<h2>Mapping Steps</h2>
-<ol>
-<li>Add sequential steps here</li>
-</ol>
-<h2>Diagram</h2>
-<p><code>mermaid
-flowchart LR
-a--&gt;b</code></p>
-<h2>Tests &amp; Checks</h2>
-<p>Add tests &amp; checks here
-[x]
-[ ]</p>
+<h1 id="insert-stage-object-name-here">INSERT STAGE OBJECT NAME HERE</h1>
+<p><strong>Last Edited: DD/MM/YYYY</strong></p>
+<h2 id="description">Description</h2>
+<p>Provide a brief description of the stage table, include specifics of source and the use case for ASPIRe.</p>
+<h2 id="jira-tickets">Jira Tickets</h2>
+<table>
+<thead>
+<tr>
+<th>Jira Ticket</th>
+<th>Description</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="https://sainsburys-jira.valiantys.net">Include JIRA Ticket number &amp; URL</a></td>
+<td>High Level Description</td>
+<td>Involved Function. E.g. Engineering, Architecture</td>
+</tr>
+</tbody>
+</table>
+<h2 id="diagram">Diagram</h2>
+<pre class="mermaid"><code>flowchart LR
+subgraph "Source"
+d("Source System")
+e("Extract")
+d--&gt;e
+end
+u(TARGET_STAGE_OBJECT_NAME)
+e--&gt;u</code></pre>
 
 
 

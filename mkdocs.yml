@@ -29,28 +29,14 @@ nav:
 - Business Data Vault:
   - BDV Objects: Business Data Vault/mapping_spec_template.md
 - Presentation Layer:
-<<<<<<< Updated upstream
-  - Facts:
-    - Agg Item Primary Plastics: Presentation Layer/AGG_ITEM_PRIMARY_PLASTICS.md
-    - Fact Item Specification Component: Presentation Layer/FACT_ITEM_SPECIFICATION_COMPONENT.md
-  - Dimensions:
-    - Dim Test 1: Presentation Layer/test.md
-=======
   - PL Objects: Presentation Layer/mapping_spec_template.md
->>>>>>> Stashed changes
 plugins:
 - search
 - markdown-filter
 - table-reader
-<<<<<<< Updated upstream
-repo_name: dp-c3fn-packaging
-repo_url: https://github.com/sainsburys-tech/dp-c3fn-packaging/tree/PFBP-290
-site_name: dp-c3fn-packaging
-=======
 repo_name: Insert Data Product Repo Name Here
 repo_url: https://github.com/sainsburys-tech/
 site_name: Insert Data Product Name here
->>>>>>> Stashed changes
 site_url: https://mappingspecexample.com/
 theme:
   features:
