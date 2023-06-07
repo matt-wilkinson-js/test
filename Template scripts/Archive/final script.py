@@ -27,94 +27,25 @@ contents = {
     }
 print(contents)
 print(type(contents)) 
-with open('mkdocs.yml','w') as dump_file:
-    yaml.dump(contents, dump_file)
-# add mapping spec template
-mapping_spec_template = markdown.markdown('''
-# Add object name
 
-** Last Edited: **
 
-## Description
-
-Add description of the object
-
-## Jira Tickets
-| Jira Ticket | Description | Function     |
-|-------------|-------------|--------------|
-|             |             | Architecture |
-## Selection Criteria
-
-Add selection criteria for the object
-
-## Target to Source
-
-{{ read_excel('add_name_here.xlsx', engine='openpyxl', sheet_name="Add_sheet_name_here") }}
-
-## Mapping Steps
-
-1. Add sequential steps here
-
-## Diagram
-
-```mermaid
-flowchart LR
-a-->b
-```
-
-## Tests & Checks
-
-Add tests & checks here
-[x]
-[ ]
-    ''')
-
-<<<<<<< Updated upstream:Template scripts/final script.py
-with open('mapping_spec_template.md','w') as f:
-    f.write(mapping_spec_template)
-# create new directory folders    
-os.mkdir(".github")    
-os.mkdir("docs")
-=======
 # create new directory folders  
 if not os.path.exists(".github"): os.mkdir(".github")    
 if not os.path.exists("docs"): os.mkdir("docs")
->>>>>>> Stashed changes:Template scripts/mkdocs_install.py
 os.chdir('docs')
 # Add index file and data vault folders
 index = markdown.markdown('about')
 with open('index.md','w') as f:
     f.write(index)
-<<<<<<< Updated upstream:Template scripts/final script.py
-os.makedirs("Staging")
-os.makedirs("Raw Data Vault")
-os.makedirs("Business Data Vault")
-os.makedirs("Presentation Layer")
-=======
 if not os.path.exists("Staging"):
     os.makedirs("Staging")
-    os.chdir("Staging")
-    with open('mapping_spec_template.md','w') as f:
-        f.write(mapping_spec_template)
-os.chdir("..")
 if not os.path.exists("Raw Data Vault"):
     os.makedirs("Raw Data Vault")
-    os.chdir("Raw Data Vault")
-    with open('mapping_spec_template.md','w') as f:
-        f.write(mapping_spec_template)
-os.chdir("..")
 if not os.path.exists("Business Data Vault"):
     os.makedirs("Business Data Vault")
     os.chdir("Business Data Vault")
-    with open('mapping_spec_template.md','w') as f:
-        f.write(mapping_spec_template)
-os.chdir("..")
 if not os.path.exists("Presentation Layer"):
     os.makedirs("Presentation Layer")
-    os.chdir("Presentation Layer")
-    with open('mapping_spec_template.md','w') as f:
-        f.write(mapping_spec_template)
->>>>>>> Stashed changes:Template scripts/mkdocs_install.py
 # Change path to github
 path
 os.chdir(path)
@@ -122,4 +53,3 @@ os.chdir('.github')
 # Add github actions
 github = {'name': 'ci', True: {'push': {'branches': ['master', 'main']}}, 'permissions': {'contents': 'write'}, 'jobs': {'deploy': {'runs-on': 'ubuntu-latest', 'steps': [{'uses': 'actions/checkout@v3'}, {'uses': 'actions/setup-python@v4', 'with': {'python-version': 3.8}}, {'uses': 'actions/cache@v2', 'with': {'key': '${{ github.ref }}', 'path': '.cache'}}, {'run': 'pip install mkdocs-material'}, {'run': 'pip install mkdocs-markdown-filter'}, {'run': 'pip install mkdocs-table_reader_plugin'}, {'run': 'pip install openpyxl'}, {'run': 'mkdocs gh-deploy --force'}]}}}
 with open('ci.yml','w') as dump_file:
-    yaml.dump(github, dump_file)
