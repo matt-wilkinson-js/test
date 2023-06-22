@@ -2,27 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://mappingspecexample.com/</loc>
-         <lastmod>2023-06-07</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mappingspecexample.com/Business%20Data%20Vault/mapping_spec_template/</loc>
-         <lastmod>2023-06-07</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mappingspecexample.com/Presentation%20Layer/mapping_spec_template/</loc>
-         <lastmod>2023-06-07</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mappingspecexample.com/Raw%20Data%20Vault/mapping_spec_template/</loc>
-         <lastmod>2023-06-07</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://mappingspecexample.com/Staging/mapping_spec_template/</loc>
-         <lastmod>2023-06-07</lastmod>
+         <lastmod>2023-06-22</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>

@@ -866,39 +866,18 @@ You can use aliases such as:</p>
 <h2 id="mapping-steps">Mapping Steps</h2>
 <ol>
 <li>Create steps to detail how the data is selected correctly, including but not limited to: Data cleansing, De-duplication &amp; Business rules applied.</li>
-<li>For example, any cleansing steps can be documented through code blocks, as can be seen in the below example.<ol>
+<li>
+<p>For example, any cleansing steps can be documented through code blocks, as can be seen in the below example.</p>
+<ol>
 <li>Data Cleansing<ol>
 <li>
 <details class="warning" open="open">
 <summary>Dataset Cleaning - Duplicate each of the sections below based on the complexity of logic</summary>
 <strong>Remove Dummy Data</strong>
 <div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>Remove COLUMN_NAME= &quot;&quot; when COLUMN_NAME contains &quot;DO NOT USE&quot;
-</code></pre></div>
-<strong>Clean Source Data</strong>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Trim COLUMN_NAME having leading/trailing spaces
-<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Remove specific pattern based values found in COLUMN_NAME
 </code></pre></div></details>
 </li>
 </ol>
-</li>
-</ol>
-</li>
-<li>Apply calculations based on the relevant business logic. See calculation section below for more detail:<ol>
-<li>
-<details class="example" open="open">
-<summary>Calculations - Duplicate each of the sections below based on the complexity of logic and number of calculated attributes/metrics</summary>
-<strong>Calculation 1</strong><br />
-Provide a definition of the calculated metric and business logic applicable for the same.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>Provide the logic/formula used for the calculation - Include the column names used as well.
-<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>Example :
-<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a>Provide an example based on values from dependent columns to explain the desired outcome for the calculation.
-</code></pre></div>
-<strong>Calculation 2</strong><br />
-Provide a definition of the calculated metric and business logic applicable for the same.
-<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>Provide the logic/formula used for the calculation - Include the column names used as well.
-<a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>Example :
-<a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Provide an example based on values from dependent columns to explain the desired outcome for the calculation.
-</code></pre></div></details>
 </li>
 </ol>
 </li>
@@ -908,8 +887,8 @@ Provide a definition of the calculated metric and business logic applicable for 
 <li>
 <details class="info" open="open">
 <summary>Table Logic</summary>
-<div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>Lookup TABLE_NAME_A USING COLUMN_A &amp; COLUMN_B to retrieve COLUMN_C
-<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>Combine TABLE_NAME_A &amp; TABLE_NAME_B using COLUMN_A &amp; COLUMN_B
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>Lookup TABLE_NAME_A USING COLUMN_A &amp; COLUMN_B to retrieve COLUMN_C
+<a id="__codelineno-2-2" name="__codelineno-2-2" href="#__codelineno-2-2"></a>Combine TABLE_NAME_A &amp; TABLE_NAME_B using COLUMN_A &amp; COLUMN_B
 </code></pre></div></details>
 </li>
 <li>Combine all of the above datasets.</li>
@@ -920,36 +899,13 @@ Provide a definition of the calculated metric and business logic applicable for 
 </ol>
 <h2 id="diagram">Diagram</h2>
 <pre class="mermaid"><code>flowchart LR
-subgraph "Join 2 Datasets"
-a("TABLE_NAME_A")
-b("TABLE_NAME_B")
-c("TABLE_NAME_C")
-a-- COLUMN_1,COLUMN_2 --&gt;c
-b-- COLUMN_1,COLUMN_2 --&gt;c
-end 
-subgraph "Combine 2 Datasets via Union"
-d("TABLE_NAME_D")
-e("TABLE_NAME_E")
-f(((union)))
-g("Apply Dataset Calculations")
-d--&gt;f
-e--&gt;f
-f--&gt;g
+subgraph "Stage"
+d("Stage Table Name")
 end
-p[Combine Dataset Calculations &amp; TABLE_NAME_C]
-g--&gt;p
-c--&gt;p
-u(TARGET_BDV_OBJECT_NAME)
-p--&gt;u</code></pre>
+u(TARGET_RDV_OBJECT_NAME)
+d--&gt;u</code></pre>
 <h2 id="tests-checks">Tests &amp; Checks</h2>
-<p>Original Tests (These are based on the mapping steps):</p>
-<ul class="task-list">
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Calculations Applied (Duplicate as required with specifics)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Business Logic Applied (Duplicate as required with specifics)</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> BDV Reconciles with Source/Equivalent Datasets based on set criteria</li>
-<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> Calculations verified &amp; signed off by Business/End User</li>
-</ul>
-<p>New Tests (To be defined post handover - Duplicate as required):</p>
+<p>Tests (To be defined post handover - Duplicate as required):</p>
 <ul class="task-list">
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New Test Scenario 1</li>
 <li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> New Test Scenario 2</li>
