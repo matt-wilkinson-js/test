@@ -32,7 +32,7 @@ You can use aliases such as:
 
 Target system for this object is ADW_<IRM\>_PL.
 
-{{ read_excel('..\\Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="PL_OBJECT_NAME") }}
+{{ read_excel('..//Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="PL_OBJECT_NAME") }}
 
 ## Mapping Steps
 
