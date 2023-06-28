@@ -6,14 +6,20 @@ Describe what types of data your product repo contains and what functionality it
 
 ## Objects contained within repo
 
-* Object 1
-* Object 2
+### `Stage`
+* Object Name & Description
+### `RDV`
+#### `Hub`
+* Object Name & Description
+#### `Satellite`
+* Object Name & Description
+#### `Link`
+* Object Name & Description
+### `BDV`
+* Object Name & Description
+### `PL`
+#### `Fact`
+* Object Name & Description
+#### `Dimension`
+* Object Name & Description
 
-## Instert Repo Name Architecture
-
-### E2E Diagram
-
-``` mermaid
-flowchart LR
-a-->b
-```

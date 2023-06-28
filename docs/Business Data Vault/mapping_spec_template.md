@@ -6,12 +6,6 @@
 
 Provide a brief description of the BDV object, include any specifics around the business context and PL objects dependent as applicable.
 
-## Jira Tickets
-
-| Jira Ticket | Description | Function |
-|-------------|-------------|----------|
-|[Include JIRA Ticket number & URL](https://sainsburys-jira.valiantys.net)| High Level Description |Involved Function. E.g. Engineering, Architecture|
-
 ## Selection Criteria
 
 Provide detailed description of the sources used to populate the BDV Object. Include the business entities that link to the sources used with examples, plus any filters applied while ingesting from source. Include details of any RDV/BDV objects used to populate this BDV object.
