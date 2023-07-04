@@ -24,22 +24,32 @@ markdown_extensions:
 nav:
 - Home:
   - About: index.md
-- Staging:
+- ADW_STAGE:
   - Stage Layer: Staging/mapping_spec_template.md
-- Raw Data Vault:
-  - RDV Objects: Raw Data Vault/mapping_spec_template.md
-  - RDV Example: Raw Data Vault/rdv_example.md
-- Business Data Vault:
+- ADW_RDV:
+  - HUB:
+    - Hub Objects: Raw Data Vault/mapping_spec_template.md
+  - LINK:
+    - Link Objects: Raw Data Vault/mapping_spec_template.md
+  - SAT:
+    - Sat Objects: Raw Data Vault/mapping_spec_template.md
+    - RDV Example: Raw Data Vault/rdv_example.md
+- ADW_BDV:
   - BDV Objects: Business Data Vault/mapping_spec_template.md
   - BDV Example: Business Data Vault/bdv_example.md
-- Presentation Layer:
-  - PL Objects: Presentation Layer/mapping_spec_template.md
-  - PL Example: Presentation Layer/pl_example.md
+- ADW_INSERT_SCHEMA_PL:
+  - FACT:
+    - Fact Objects: Presentation Layer/mapping_spec_template.md
+    - PL Example: Presentation Layer/pl_example.md
+  - DIMENSION:
+    - Dim Objects: Presentation Layer/mapping_spec_template.md
 # Plugins
 plugins:
 - search
 - markdown-filter
 - table-reader
+- git-revision-date-localized
+- git-authors
 repo_name: Insert Data Product Repo Name Here
 repo_url: https://github.com/sainsburys-tech/
 site_name: Insert Data Product Name here

@@ -1,7 +1,5 @@
 # PACKAGING_COMPONENT_BR
 
-**Last Edited: 22/06/2023**
-
 ## Description
 
 This object is the atomic level bridge table for packaging data. Containing both Evolve Food and Valpak, this performs all the cleaning and calculations that need to take place prior to being consumed in the PL layer. This object supports `DIM_PACKAGING_COMPONENT` and `ITEM_SPECIFICATION_COMPONENT_BR` which is a table that combines Sales, Supplier and Packaging data for the reporting requirements in Plan for Better Plastics.
