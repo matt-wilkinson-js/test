@@ -1,0 +1,2 @@
+﻿Target System,Target Table/Xpath/JSON Schema/Other,Target Column,Transformation/Mapping rules,Source System,Source Table/Xpath/JSON Schema/Other,Source Column
+ADW_BDV,PACKAGING_COMPONENT_BR,PACKAGING_COMPONENT_CD,Concatenation & Union. See steps 1 to 3,ADW_RDV,"AP, OP & VALPAK",Multiple see step 1

@@ -1,5 +1,8 @@
 # PACKAGING_COMPONENT_BR
 
+**Authors:** {{ git_page_authors }}  
+**Revision Date:** {{ git_revision_date_localized }}
+
 ## Description
 
 This object is the atomic level bridge table for packaging data. Containing both Evolve Food and Valpak, this performs all the cleaning and calculations that need to take place prior to being consumed in the PL layer. This object supports `DIM_PACKAGING_COMPONENT` and `ITEM_SPECIFICATION_COMPONENT_BR` which is a table that combines Sales, Supplier and Packaging data for the reporting requirements in Plan for Better Plastics.
@@ -43,7 +46,7 @@ The below tables will be used in the build and have the following as aliases:
 
 Target system for this object is ADW_BDV.
 
-{{ read_excel('../Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="BDV_EXAMPLE") }}
+{{ read_csv("./docs/csv/bdv-example.csv") }}
 
 ## Mapping Steps
 

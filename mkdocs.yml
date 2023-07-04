@@ -25,24 +25,24 @@ nav:
 - Home:
   - About: index.md
 - ADW_STAGE:
-  - Stage Layer: Staging/mapping_spec_template.md
+  - Stage Layer: adw_stage/mapping_spec_template.md
 - ADW_RDV:
   - HUB:
-    - Hub Objects: Raw Data Vault/mapping_spec_template.md
+    - Hub Objects: adw_rdv/mapping_spec_template.md
   - LINK:
-    - Link Objects: Raw Data Vault/mapping_spec_template.md
+    - Link Objects: adw_rdv/mapping_spec_template.md
   - SAT:
-    - Sat Objects: Raw Data Vault/mapping_spec_template.md
-    - RDV Example: Raw Data Vault/rdv_example.md
+    - Sat Objects: adw_rdv/mapping_spec_template.md
+    - RDV Example: adw_rdv/rdv_example.md
 - ADW_BDV:
-  - BDV Objects: Business Data Vault/mapping_spec_template.md
-  - BDV Example: Business Data Vault/bdv_example.md
+  - BDV Objects: adw_bdv/mapping_spec_template.md
+  - BDV Example: adw_bdv/bdv_example.md
 - ADW_INSERT_SCHEMA_PL:
   - FACT:
-    - Fact Objects: Presentation Layer/mapping_spec_template.md
-    - PL Example: Presentation Layer/pl_example.md
+    - Fact Objects: adw_pl/mapping_spec_template.md
+    - PL Example: adw_pl/pl_example.md
   - DIMENSION:
-    - Dim Objects: Presentation Layer/mapping_spec_template.md
+    - Dim Objects: adw_pl/mapping_spec_template.md
 # Plugins
 plugins:
 - search
@@ -88,3 +88,5 @@ theme:
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
+extra_javascript:
+    - https://unpkg.com/mermaid/dist/mermaid.min.js
