@@ -6,12 +6,6 @@
 
 Provide a brief description of the RDV object, include any specifics around the business context and BDV/PL objects dependent as applicable.
 
-## Jira Tickets
-
-| Jira Ticket | Description | Function |
-|-------------|-------------|----------|
-|[Include JIRA Ticket number & URL](https://sainsburys-jira.valiantys.net)| High Level Description |Involved Function. E.g. Engineering, Architecture|
-
 ## Selection Criteria
 
 Provide detailed description of the sources used to populate the RDV Object. Include the business entities that link to the sources used with examples, plus any filters applied while ingesting from source. Include details of any RDV/BDV objects used to populate this BDV object.
@@ -32,7 +26,7 @@ You can use aliases such as:
 
 Target system for this object is ADW_BDV.
 
-{{ read_excel('..\\Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="RDV_OBJECT_NAME") }}
+{{ read_excel('..//Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="RDV_OBJECT_NAME") }}
 
 ## Mapping Steps
 

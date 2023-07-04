@@ -26,10 +26,13 @@ nav:
   - Stage Layer: Staging/mapping_spec_template.md
 - Raw Data Vault:
   - RDV Objects: Raw Data Vault/mapping_spec_template.md
+  - RDV Example: Raw Data Vault/rdv_example.md
 - Business Data Vault:
   - BDV Objects: Business Data Vault/mapping_spec_template.md
+  - BDV Example: Business Data Vault/bdv_example.md
 - Presentation Layer:
   - PL Objects: Presentation Layer/mapping_spec_template.md
+  - PL Example: Presentation Layer/pl_example.md
 plugins:
 - search
 - markdown-filter
