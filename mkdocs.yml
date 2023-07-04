@@ -1,3 +1,4 @@
+# Extensions
 markdown_extensions:
 - pymdownx.highlight:
     anchor_linenums: true
@@ -19,6 +20,7 @@ markdown_extensions:
 - pymdownx.tasklist:
     custom_checkbox: true
 - tables
+# Navigation
 nav:
 - Home:
   - About: index.md
@@ -33,6 +35,7 @@ nav:
 - Presentation Layer:
   - PL Objects: Presentation Layer/mapping_spec_template.md
   - PL Example: Presentation Layer/pl_example.md
+# Plugins
 plugins:
 - search
 - markdown-filter
@@ -41,6 +44,7 @@ repo_name: Insert Data Product Repo Name Here
 repo_url: https://github.com/sainsburys-tech/
 site_name: Insert Data Product Name here
 site_url: https://mappingspecexample.com/
+# Theme
 theme:
   features:
   - navigation.tabs
