@@ -1,3 +1,6 @@
+import os
+import yaml
+import markdown
 import sys
 import subprocess
 # install all python packages for mkdocs
@@ -8,15 +11,14 @@ subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'mkdocs_material_
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'mkdocs_table_reader_plugin'])
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pandas'])
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'openpyxl'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pyyaml'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'markdown'])
-# import python packages
-import os
-import yaml
-import markdown
 # set to current directory
-path= os.getcwd()
+path= '/Users/matt.wilkinson/Desktop/'
 os.chdir(path)
+# creates repo (will be removed for final script)
+os.mkdir("test_repo")
+# change directory path
+path2= '/Users/matt.wilkinson/Desktop/test_repo'
+os.chdir(path2)
 # add in mkdocs yaml file
 contents = {
     'site_name': 'dp-c3fn-packaging', 
@@ -29,26 +31,58 @@ contents = {
     }
 print(contents)
 print(type(contents)) 
-with open('mkdocs.yml','w') as dump_file:
+with open('mktest.yml','w') as dump_file:
     yaml.dump(contents, dump_file)
+# add mapping spec template
+mdtest = markdown.markdown('''
+# Add object name
 
-# create new directory folders  
-if not os.path.exists(".github"): os.mkdir(".github")    
-if not os.path.exists("docs"): os.mkdir("docs")
-os.chdir('docs')
-# Add index file and data vault folders
+** Last Edited: **
+
+## Description
+
+Add description of the object
+
+## Jira Tickets
+| Jira Ticket | Description | Function     |
+|-------------|-------------|--------------|
+|             |             | Architecture |
+## Selection Criteria
+
+Add selection criteria for the object
+
+## Target to Source
+
+{{ read_excel('add_name_here.xlsx', engine='openpyxl', sheet_name="Add_sheet_name_here") }}
+
+## Mapping Steps
+
+1. Add sequential steps here
+
+## Diagram
+
+```mermaid
+flowchart LR
+a-->b
+```
+
+## Tests & Checks
+
+Add tests & checks here
+[x]
+[ ]
+    ''')
+
+with open('mdtest.md','w') as f:
+    f.write(mdtest)
+os.mkdir("docs")
+os.mkdir(".github")
+path3= '/Users/matt.wilkinson/Desktop/test_repo/docs'
+os.chdir(path3)
 index = markdown.markdown('about')
 with open('index.md','w') as f:
     f.write(index)
-if not os.path.exists("Staging"):os.makedirs("Staging")
-if not os.path.exists("Raw Data Vault"):os.makedirs("Raw Data Vault")
-if not os.path.exists("Business Data Vault"):os.makedirs("Business Data Vault")
-if not os.path.exists("Presentation Layer"):os.makedirs("Presentation Layer")
-# Change path to github
-path
-os.chdir(path)
-os.chdir('.github')
-# Add github actions
-github = {'name': 'ci', True: {'push': {'branches': ['master', 'main']}}, 'permissions': {'contents': 'write'}, 'jobs': {'deploy': {'runs-on': 'ubuntu-latest', 'steps': [{'uses': 'actions/checkout@v3'}, {'uses': 'actions/setup-python@v4', 'with': {'python-version': 3.8}}, {'uses': 'actions/cache@v2', 'with': {'key': '${{ github.ref }}', 'path': '.cache'}}, {'run': 'pip install mkdocs-material'}, {'run': 'pip install mkdocs-markdown-filter'}, {'run': 'pip install mkdocs-table_reader_plugin'}, {'run': 'pip install openpyxl'}, {'run': 'mkdocs gh-deploy --force'}]}}}
-with open('mkdocsupdate.yml','w') as dump_file:
-    yaml.dump(github, dump_file)
+os.makedirs("Staging")
+os.makedirs("Raw Data Vault")
+os.makedirs("Business Data Vault")
+os.makedirs("Presentation Layer")

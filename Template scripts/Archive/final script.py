@@ -8,8 +8,6 @@ subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'mkdocs_material_
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'mkdocs_table_reader_plugin'])
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pandas'])
 subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'openpyxl'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'pyyaml'])
-subprocess.check_call([sys.executable, '-m', 'pip', 'install', 'markdown'])
 # import python packages
 import os
 import yaml
@@ -29,8 +27,7 @@ contents = {
     }
 print(contents)
 print(type(contents)) 
-with open('mkdocs.yml','w') as dump_file:
-    yaml.dump(contents, dump_file)
+
 
 # create new directory folders  
 if not os.path.exists(".github"): os.mkdir(".github")    
@@ -40,15 +37,19 @@ os.chdir('docs')
 index = markdown.markdown('about')
 with open('index.md','w') as f:
     f.write(index)
-if not os.path.exists("Staging"):os.makedirs("Staging")
-if not os.path.exists("Raw Data Vault"):os.makedirs("Raw Data Vault")
-if not os.path.exists("Business Data Vault"):os.makedirs("Business Data Vault")
-if not os.path.exists("Presentation Layer"):os.makedirs("Presentation Layer")
+if not os.path.exists("Staging"):
+    os.makedirs("Staging")
+if not os.path.exists("Raw Data Vault"):
+    os.makedirs("Raw Data Vault")
+if not os.path.exists("Business Data Vault"):
+    os.makedirs("Business Data Vault")
+    os.chdir("Business Data Vault")
+if not os.path.exists("Presentation Layer"):
+    os.makedirs("Presentation Layer")
 # Change path to github
 path
 os.chdir(path)
 os.chdir('.github')
 # Add github actions
 github = {'name': 'ci', True: {'push': {'branches': ['master', 'main']}}, 'permissions': {'contents': 'write'}, 'jobs': {'deploy': {'runs-on': 'ubuntu-latest', 'steps': [{'uses': 'actions/checkout@v3'}, {'uses': 'actions/setup-python@v4', 'with': {'python-version': 3.8}}, {'uses': 'actions/cache@v2', 'with': {'key': '${{ github.ref }}', 'path': '.cache'}}, {'run': 'pip install mkdocs-material'}, {'run': 'pip install mkdocs-markdown-filter'}, {'run': 'pip install mkdocs-table_reader_plugin'}, {'run': 'pip install openpyxl'}, {'run': 'mkdocs gh-deploy --force'}]}}}
-with open('mkdocsupdate.yml','w') as dump_file:
-    yaml.dump(github, dump_file)
+with open('ci.yml','w') as dump_file:
