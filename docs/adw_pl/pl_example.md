@@ -1,6 +1,7 @@
 # FACT_ITEM_SPECIFICATION_COMPONENT
 
-**Last Edited: 27/04/2022**
+**Authors:** {{ git_page_authors }}  
+**Revision Date:** {{ git_revision_date_localized }}
 
 ## Description
 

@@ -1,6 +1,7 @@
 # ITEM SPECIFICATION EVOLVE SAT
 
-**Last Edited: 28/06/2023**
+**Authors:** {{ git_page_authors }}  
+**Revision Date:** {{ git_revision_date_localized }}
 
 ## Description
 

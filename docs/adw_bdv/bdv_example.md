@@ -1,6 +1,7 @@
 # PACKAGING_COMPONENT_BR
 
-**Last Edited: 22/06/2023**
+**Authors:** {{ git_page_authors }}  
+**Revision Date:** {{ git_revision_date_localized }}
 
 ## Description
 
@@ -45,7 +46,7 @@ The below tables will be used in the build and have the following as aliases:
 
 Target system for this object is ADW_BDV.
 
-{{ read_excel('../Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="BDV_EXAMPLE") }}
+{{ read_csv("./docs/csv/bdv-example.csv") }}
 
 ## Mapping Steps
 

@@ -13,6 +13,7 @@ markdown_extensions:
     custom_fences:
     - class: mermaid
       name: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
 - pymdownx.mark
 - attr_list
 - pymdownx.emoji: null
@@ -24,22 +25,33 @@ markdown_extensions:
 nav:
 - Home:
   - About: index.md
-- Staging:
-  - Stage Layer: Staging/mapping_spec_template.md
-- Raw Data Vault:
-  - RDV Objects: Raw Data Vault/mapping_spec_template.md
-  - RDV Example: Raw Data Vault/rdv_example.md
-- Business Data Vault:
-  - BDV Objects: Business Data Vault/mapping_spec_template.md
-  - BDV Example: Business Data Vault/bdv_example.md
-- Presentation Layer:
-  - PL Objects: Presentation Layer/mapping_spec_template.md
-  - PL Example: Presentation Layer/pl_example.md
+- ADW_STAGE:
+  - Stage Layer: adw_stage/mapping_spec_template.md
+- ADW_RDV:
+  - HUB:
+    - Hub Objects: adw_rdv/mapping_spec_template.md
+  - LINK:
+    - Link Objects: adw_rdv/mapping_spec_template.md
+  - SAT:
+    - Sat Objects: adw_rdv/mapping_spec_template.md
+    - RDV Example: adw_rdv/rdv_example.md
+- ADW_BDV:
+  - BDV Objects: adw_bdv/mapping_spec_template.md
+  - BDV Example: adw_bdv/bdv_example.md
+- ADW_INSERT_SCHEMA_PL:
+  - FACT:
+    - Fact Objects: adw_pl/mapping_spec_template.md
+    - PL Example: adw_pl/pl_example.md
+  - DIMENSION:
+    - Dim Objects: adw_pl/mapping_spec_template.md
 # Plugins
 plugins:
 - search
 - markdown-filter
 - table-reader
+- git-revision-date-localized
+- git-authors
+#- mermaid2
 repo_name: Insert Data Product Repo Name Here
 repo_url: https://github.com/sainsburys-tech/
 site_name: Insert Data Product Name here
@@ -78,3 +90,5 @@ theme:
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
+#extra_javascript:
+  #- https://unpkg.com/mermaid/dist/mermaid.min.js
