@@ -13,6 +13,7 @@ markdown_extensions:
     custom_fences:
     - class: mermaid
       name: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
 - pymdownx.mark
 - attr_list
 - pymdownx.emoji: null
@@ -50,6 +51,7 @@ plugins:
 - table-reader
 - git-revision-date-localized
 - git-authors
+#- mermaid2
 repo_name: Insert Data Product Repo Name Here
 repo_url: https://github.com/sainsburys-tech/
 site_name: Insert Data Product Name here
@@ -88,5 +90,5 @@ theme:
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
-extra_javascript:
-    - https://unpkg.com/mermaid/dist/mermaid.min.js
+#extra_javascript:
+  #- https://unpkg.com/mermaid/dist/mermaid.min.js

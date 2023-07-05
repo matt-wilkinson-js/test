@@ -1,6 +1,7 @@
 # INSERT STAGE OBJECT NAME HERE
 
-**Last Edited: DD/MM/YYYY**
+**Authors:** {{ git_page_authors }}  
+**Revision Date:** {{ git_revision_date_localized }}
 
 ## Description
 

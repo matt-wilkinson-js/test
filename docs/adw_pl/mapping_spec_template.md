@@ -1,6 +1,7 @@
 # INSERT PL OBJECT NAME HERE
 
-**Last Edited: DD/MM/YYYY**
+**Authors:** {{ git_page_authors }}  
+**Revision Date:** {{ git_revision_date_localized }}
 
 ## Description
 
@@ -26,7 +27,7 @@ You can use aliases such as:
 
 Target system for this object is ADW_<IRM\>_PL.
 
-{{ read_excel('..//Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="PL_OBJECT_NAME") }}
+{{ read_csv("./docs/csv/pl-template.csv") }}
 
 ## Mapping Steps
 
