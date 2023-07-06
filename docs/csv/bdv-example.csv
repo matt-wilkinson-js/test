@@ -1,5 +1,5 @@
 ﻿Target System,Target Table/Xpath/JSON Schema/Other,Target Column,Transformation/Mapping rules,Source System,Source Table/Xpath/JSON Schema/Other,Source Column
-ADW_BDV,PACKAGING_COMPONENT_BR,PACKAGING_COMPONENT_CD,Concatenation & Union. See steps 1 to 3,ADW_RDV,"AP, OP & VALPAK",Multiple see step 1
+ADW_BDV,PACKAGING_COMPONENT_BR,PACKAGING_COMPONENT_CD,"*[Link1](#Link1) <div id=""Linkreturn""></div>",ADW_RDV,"AP, OP & VALPAK",Multiple see step 1
 ADW_BDV,PACKAGING_COMPONENT_BR,VALID_FROM_DT,Step 7,ADW_RDV,EVOLVE_SAT & VALPAK,"EFFECTIVE_FROM_TS, VALID_FROM_TS"
 ADW_BDV,PACKAGING_COMPONENT_BR,VALID_TO_DT,Step 8,ADW_RDV,EVOLVE_SAT & VALPAK,N/A
 ADW_BDV,PACKAGING_COMPONENT_BR,ITEM_CD,Union. See steps 1 to 3,ADW_RDV,"AP, OP & VALPAK","ITEM_NK1, ITEM_CD"
