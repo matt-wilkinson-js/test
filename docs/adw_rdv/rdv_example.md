@@ -22,9 +22,14 @@ IF ret/specTypeFormat/specType = PRODUCE THEN ret/specificationSectionDetail/spe
 
 ## Target to Source
 
-* `ADW_STAGE.EVOLVE_KAFKA_RAW_PRODUCT`
+* Target system for this object is ADW_RDV 
+* Target table is ITEM_SPECIFICATION_EVOLVE_SAT
+* Source system is ADW_STAGE
+* Source table is EVOLVE_KAFKA_RAW_PRODUCT
 
-Target system for this object is ADW_RDV.
+```
+ITEM_NK1 mapped from ret/specNumber/
+```
 
 {{ read_excel('..//Mapping Spec Git.xlsx', engine='openpyxl', sheet_name="RDV_EXAMPLE") }}
 
