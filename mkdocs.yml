@@ -1,4 +1,3 @@
-# Extensions
 markdown_extensions:
 - pymdownx.highlight:
     anchor_linenums: true
@@ -13,7 +12,6 @@ markdown_extensions:
     custom_fences:
     - class: mermaid
       name: mermaid
-      format: !!python/name:pymdownx.superfences.fence_code_format
 - pymdownx.mark
 - attr_list
 - pymdownx.emoji: null
@@ -21,42 +19,35 @@ markdown_extensions:
 - pymdownx.tasklist:
     custom_checkbox: true
 - tables
-# Navigation
 nav:
 - Home:
   - About: index.md
-- ADW_STAGE:
-  - Stage Layer: adw_stage/mapping_spec_template.md
-- ADW_RDV:
-  - HUB:
-    - Hub Objects: adw_rdv/mapping_spec_template.md
-  - LINK:
-    - Link Objects: adw_rdv/mapping_spec_template.md
-  - SAT:
-    - Sat Objects: adw_rdv/mapping_spec_template.md
-    - RDV Example: adw_rdv/rdv_example.md
-- ADW_BDV:
-  - BDV Objects: adw_bdv/mapping_spec_template.md
-  - BDV Example: adw_bdv/bdv_example.md
-- ADW_INSERT_SCHEMA_PL:
-  - FACT:
-    - Fact Objects: adw_pl/mapping_spec_template.md
-    - PL Example: adw_pl/pl_example.md
-  - DIMENSION:
-    - Dim Objects: adw_pl/mapping_spec_template.md
-# Plugins
+- Staging:
+  - test: Staging/test.md
+- Raw Data Vault:
+  - Hubs:
+    - Hub Test 1: Raw Data Vault/hub.md
+    - Hub Test 2: Raw Data Vault/test.md
+  - Satellites:
+    - Sat Test 1: Raw Data Vault/test.md
+  - Links:
+    - Link Test 1: Raw Data Vault/test.md
+- Business Data Vault:
+  - Item Specification Component BR: Business Data Vault/ITEM_SPECIFICATION_COMPONENT_BR.md
+- Presentation Layer:
+  - Facts:
+    - Agg Item Primary Plastics: Presentation Layer/AGG_ITEM_PRIMARY_PLASTICS.md
+    - Fact Item Specification Component: Presentation Layer/FACT_ITEM_SPECIFICATION_COMPONENT.md
+  - Dimensions:
+    - Dim Test 1: Presentation Layer/test.md
 plugins:
 - search
 - markdown-filter
 - table-reader
-- git-revision-date-localized
-- git-authors
-#- mermaid2
-repo_name: Insert Data Product Repo Name Here
-repo_url: https://github.com/sainsburys-tech/
-site_name: Insert Data Product Name here
+repo_name: dp-c3fn-packaging
+repo_url: https://github.com/sainsburys-tech/dp-c3fn-packaging/tree/PFBP-290
+site_name: dp-c3fn-packaging
 site_url: https://mappingspecexample.com/
-# Theme
 theme:
   features:
   - navigation.tabs
@@ -90,5 +81,3 @@ theme:
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
-#extra_javascript:
-  #- https://unpkg.com/mermaid/dist/mermaid.min.js
