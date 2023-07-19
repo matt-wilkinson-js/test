@@ -1,0 +1,49 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="361px" height="61px" viewBox="-0.5 -0.5 361 61" content="&lt;mxfile&gt;&lt;diagram id=&quot;Tjpo9FdY3MqkYTKbP5Wq&quot; name=&quot;Page-1&quot;&gt;xZTBToQwEIafhuMaoCzu2WXVi4kJB/XY0BGaFEpKWcCntyxToOIaT3qi83eG/v1mwCPHsn9QtC6eJAPhhT7rPZJ4YRjc7mPzGJUBFUKiSckVZ6gtQso/AEUf1ZYzaJxELaXQvHbFTFYVZNrRqFKyc9PepXBPrWkOGyHNqNiqL5zpYlIPe3/RH4HnhT058HGnpDYZhaagTHYriZw8clRS6mlV9kcQIz3LZaq7v7I7G1NQ6d8UELShB3s3YOaqGFayMo+7QpfCRIFZmteq4dUEvg3exuBmb8OkX28mA0ZbX2i1ka3K8OhwkkYHbm+pygHLohmSGS+QJZhTTIoCQTU/u3UU25zPeXPps+TGSOjjTO7IARuCI7kLbIfsSyYTWLcQNYuVkUW6cP6eOV7zTEWLftMJwtdWKNlWDBgi7AquIa3phVZnviy3M1cJn0Fp6FfSlp6lEMdfKMxfXLeM+UymWI147F9H7qD6gUu04ZJAo3llGiur/4cThX8Ix4TLT2CaseVfSk6f&lt;/diagram&gt;&lt;/mxfile&gt;">
+    <defs/>
+    <g>
+        <path d="M 120 30 L 233.63 30" fill="none" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="stroke"/>
+        <path d="M 238.88 30 L 231.88 33.5 L 233.63 30 L 231.88 26.5 Z" fill="rgb(0, 0, 0)" stroke="rgb(0, 0, 0)" stroke-miterlimit="10" pointer-events="all"/>
+        <rect x="0" y="0" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 30px; margin-left: 1px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Source
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="60" y="34" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Source
+                </text>
+            </switch>
+        </g>
+        <rect x="240" y="0" width="120" height="60" fill="rgb(255, 255, 255)" stroke="rgb(0, 0, 0)" pointer-events="all"/>
+        <g transform="translate(-0.5 -0.5)">
+            <switch>
+                <foreignObject pointer-events="none" width="100%" height="100%" requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility" style="overflow: visible; text-align: left;">
+                    <div xmlns="http://www.w3.org/1999/xhtml" style="display: flex; align-items: unsafe center; justify-content: unsafe center; width: 118px; height: 1px; padding-top: 30px; margin-left: 241px;">
+                        <div data-drawio-colors="color: rgb(0, 0, 0); " style="box-sizing: border-box; font-size: 0px; text-align: center;">
+                            <div style="display: inline-block; font-size: 12px; font-family: Helvetica; color: rgb(0, 0, 0); line-height: 1.2; pointer-events: all; white-space: normal; overflow-wrap: normal;">
+                                Destination
+                            </div>
+                        </div>
+                    </div>
+                </foreignObject>
+                <text x="300" y="34" fill="rgb(0, 0, 0)" font-family="Helvetica" font-size="12px" text-anchor="middle">
+                    Destination
+                </text>
+            </switch>
+        </g>
+    </g>
+    <switch>
+        <g requiredFeatures="http://www.w3.org/TR/SVG11/feature#Extensibility"/>
+        <a transform="translate(0,-5)" xlink:href="https://www.diagrams.net/doc/faq/svg-export-text-problems" target="_blank">
+            <text text-anchor="middle" font-size="10px" x="50%" y="100%">
+                Text is not SVG - cannot display
+            </text>
+        </a>
+    </switch>
+</svg>

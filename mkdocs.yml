@@ -33,7 +33,7 @@ nav:
   - Links:
     - Link Test 1: Raw Data Vault/test.md
 - Business Data Vault:
-  - Item Specification Component BR: Business Data Vault/ITEM_SPECIFICATION_COMPONENT_BR.md
+  - test: adw_bdv/bdv_example.md
 - Presentation Layer:
   - Facts:
     - Agg Item Primary Plastics: Presentation Layer/AGG_ITEM_PRIMARY_PLASTICS.md
