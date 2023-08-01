@@ -1,0 +1,311 @@
+﻿Target Column,Source System,Source Table/Xpath/JSON Schema/Other,Source Column,Transformation/Mapping rules,Transformation/Mapping rules,Transformation/Mapping rules,Transformation/Mapping rules,Transformation/Mapping rules,Transformation/Mapping rules,Transformation/Mapping rules
+SURVEY_PROJECT_ID,ADW_RDV,"FDBK_SURVEY_LINK, FDBK_SURVEY_QUALTRICS_SAT",SURVEY_PROJECT_ID, sl.SURVEY_NK2 AS SURVEY_PROJECT_ID,Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+SURVEY_ID,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",SURVEY_ID,", sl.SURVEY_NK1 AS SURVEY_ID",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+NECTAR_COLLECTOR_CARD_NUM,ADW_RDV,nctr_cllctr_crd_pf_urn_link ,NECTAR_COLLECTOR_CARD_NUM,", min(sl.loyaltyid) AS NECTAR_COLLECTOR_CARD_NUM",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+TRANSACTION_KEY,ADW_RDV,SALES_TRANSACTION_MEASURE_LINK,TRANSACTION_KEY,", min(sl.TRANSACTION_KEY) AS TRANSACTION_KEY",Same as Column D,Same as Column D,Same as Column D,"SUBSTRING(FDBK_SURVEY_QUALTRICS_SAT.TRANSACTION_KEY, 1, 18)",Same as column H,Same as Column D
+STORE_CD,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",STORE_CD,", min(TRY_CAST(CASE WHEN sl.VISIT_STORE_NK1 = '~~'  THEN NULL ELSE sl.VISIT_STORE_NK1 END AS NUMBER)) AS STORE_CD",Same as Column D,Same as Column D,Same as Column D,"Strip leading zeros from sl.VISIT_STORE_NK1
+then join to ADW_PROPERTY_PL.DIM_LOCATION.OP_CO_LOCATION_CD. Use value for ADW_PROPERTY_PL.DIM_LOCATION.LOCATION_CD (must be a 6 character code starting with 10)",Same as column H,Same as Column D
+TILL_NUM,ADW_RDV,"SALES_TRANSACTION_MEASURE_LINK
+FDBK_SURVEY_QUALTRICS_SAT","TILL_NK1
+TRANSACTION_KEY
+TILL_NUMBER
+",Same as Column K,Same as Column K,Same as Column K,Same as Column K,"If FDBK_SURVEY_QUALTRICS_SAT.TRANSACTION_KEY IS NULL THEN
+      FDBK_SURVEY_QUALTRICS_SAT.TILL_NUMBER /* Receipt journey */
+Else
+      SUBSTRING(FDBK_SURVEY_QUALTRICS_SAT.TRANSACTION_KEY, 9, 4) /* Email journey */",Same as column H,Same as Column D
+TRAN_DT,ADW_RDV,SALES_TRANSACTION_MEASURE_LINK,TRAN_END_TS,Same as Column K,Same as Column K,Same as Column K,Same as Column K,Set to NULL (transaction data not available in SALES_TRANSACTION_MEASURE_LINK for Argos),Same as column H,Same as Column D
+TRAN_TM,ADW_RDV,SALES_TRANSACTION_MEASURE_LINK,TRAN_END_TS,Same as Column K,Same as Column K,Same as Column K,Same as Column K,Set to NULL (transaction data not available in SALES_TRANSACTION_MEASURE_LINK for Argos),Same as column H,Same as Column D
+TRAN_NUMBER,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT","TRAN_NUMBER
+TRANSACTION_KEY
+
+",", CAST(min(sl.TRAN_NUMBER) as NUMBER) as ""TRAN_NUMBER""",Same as Column D,Same as Column D,Same as Column D,"If FDBK_SURVEY_QUALTRICS_SAT.TRANSACTION_KEY IS NULL THEN
+      FDBK_SURVEY_QUALTRICS_SAT.TRAN_NUMBER /* Receipt journey */
+Else
+      SUBSTRING(FDBK_SURVEY_QUALTRICS_SAT.TRANSACTION_KEY, 13, 16) */ Email journey */",Same as column H,Same as Column D
+SURVEY_TYPE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",SURVEY_TYPE,ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE  AS VARCHAR(20) AS SURVEY_TYPE,ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE  AS VARCHAR(20) AS SURVEY_TYPE,ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE  AS VARCHAR(20) AS SURVEY_TYPE,ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE  AS VARCHAR(20) AS SURVEY_TYPE,"ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE  AS VARCHAR(20) AS SURVEY_TYPE
+If this value is NULL then hardcode based on SURVEY_PROJECT_ID:
+WHEN 'SV_3UJeDf9c1VsHVYO' THEN 'E2E'
+WHEN 'SV_9vl3g4QgMWDwyuG' THEN 'SMS'
+WHEN 'SV_6VDlpwWS8tuYjD8' THEN 'SMS'","NOTE: ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE may come in as 'FEEDBCK' rather than 'FEEDBACK for the Feedback Button survey (SV_8B9js5zeIDa9UV0) due to a historic typo in Qualtrics so hardcode in a check for this value and change it to 'FEEDBACK' if necessary
+
+ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE  AS VARCHAR(20) AS SURVEY_TYPE
+      If this value is 'FEEDBCK' then correct to 'FEEDBACK' (see above note)
+      If this value is NULL then hardcode based on SURVEY_PROJECT_ID:
+          WHEN 'SV_3UJeDf9c1VsHVYO' THEN 'E2E'
+          WHEN 'SV_9vl3g4QgMWDwyuG' THEN 'SMS'
+          WHEN 'SV_6VDlpwWS8tuYjD8' THEN 'SMS'
+          WHEN 'SV_8B9js5zeIDa9UV0' THEN 'FEEDBACK
+          WHEN 'SV_2rSvStLzycecZOm' THEN 'POPUP'","ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.SURVEY_CHANNEL_TYPE  AS VARCHAR(20) AS SURVEY_TYPE
+If this value is NULL then hardcode based on SURVEY_PROJECT_ID:
+WHEN 'SV_24DeJwD5LkUQxoy' THEN 'CMC'
+WHEN 'SV_cFOhrO8drcUbDa5' THEN 'CMC'
+WHEN 'SV_5oODvo2t9M3Na5L' THEN 'CMC'
+WHEN 'SV_bqPEsEHROd17xum' THEN 'CMC'
+WHEN 'SV_87dKDEgmCsxovSl' THEN 'CMC'
+WHEN 'SV_a3K1kBQbqNMvcbP' THEN 'CMC'
+WHEN 'SV_6eTJrAcmCQvLf5b' THEN 'CMC'"
+VISIT_DATE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",VISIT_DATE,", min(DATE(sl.VISIT_DATE)) AS VISIT_DATE",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+VISIT_HOUR,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",VISIT_HOUR,", min(HOUR(sl.VISIT_DATE)) AS VISIT_HOUR",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+TILL_TYPE_ID,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",TILL_TYPE_ID,", min(cast(p1.answertext as NUMBER)) AS TILL_TYPE_ID",Same as Column D,Same as Column D,Same as Column D,No QID for till type for Argos so hardcode to NULL,Same as column H,Same as Column D
+SURVEY_DATETIME,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",SURVEY_DATETIME,", min(sl.SURVEY_DATETIME) as SURVEY_DATETIME",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+SURVEY_DATE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",SURVEY_DATE,", min(DATE(sl.SURVEY_DATETIME)) AS SURVEY_DATE",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+SURVEY_HOUR,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",SURVEY_HOUR,", min(HOUR(sl.SURVEY_DATETIME)) AS SURVEY_HOUR",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+UNIT_LOCAL_DATETIME,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",UNIT_LOCAL_DATETIME,", min(sl.SURVEY_DATETIME) as UNIT_LOCAL_DATETIME",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+INVITE_TYPE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",INVITE_TYPE,", min(sl.INVITE_TYPE) AS INVITE_TYPE",Same as Column D,PopUp,Feedback,"If UPPER(FDBK_SURVEY_QUALTRICS_SAT.INVITE_TYPE) LIKE 'EMAIL%' then hardcode to 'Email' otherwise use value of FDBK_SURVEY_QUALTRICS_SAT.INVITE_TYPE
+If FDBK_SURVEY_QUALTRICS_SAT.INVITE_TYPE is NULL then hardcode based on SURVEY_PROJECT_ID:
+WHEN SURVEY_PROJECT_ID = 'SV_9vl3g4QgMWDwyuG' OR 'SV_6VDlpwWS8tuYjD8' THEN 'SMS'
+
+","If UPPER(FDBK_SURVEY_QUALTRICS_SAT.INVITE_TYPE) LIKE 'EMAIL%' then hardcode to 'Email' otherwise use value of FDBK_SURVEY_QUALTRICS_SAT.INVITE_TYPE
+If FDBK_SURVEY_QUALTRICS_SAT.INVITE_TYPE is NULL then hardcode based on SURVEY_PROJECT_ID:
+      WHEN SURVEY_PROJECT_ID = 'SV_9vl3g4QgMWDwyuG' OR 'SV_6VDlpwWS8tuYjD8' THEN 'SMS'
+      WHEN SURVEY_PROJECT_ID = 'SV_8B9js5zeIDa9UV0' THEN 'Feedback'
+      WHEN SURVEY_PROJECT_ID = 'SV_2rSvStLzycecZOm' THEN 'PopUp'
+
+","ADW_PROD.ADW_RDV.FDBK_SURVEY_QUALTRICS_SAT.INVITE_TYPE IS NULL AS SURVEY_TYPE
+If this value is NULL then hardcode based on SURVEY_PROJECT_ID:
+WHEN 'SV_24DeJwD5LkUQxoy' THEN 'SMS'
+WHEN 'SV_cFOhrO8drcUbDa5' THEN 'SMS'
+WHEN 'SV_5oODvo2t9M3Na5L' THEN 'SMS'
+WHEN 'SV_bqPEsEHROd17xum' THEN 'SMS'
+WHEN 'SV_87dKDEgmCsxovSl' THEN 'SMS'
+WHEN 'SV_a3K1kBQbqNMvcbP' THEN 'SMS'
+WHEN 'SV_6eTJrAcmCQvLf5b' THEN 'SMS'"
+OVERALL_CSAT_SCORE,ADW_RDV,"FDBK_SURVEY_LINK
+
+QUALTRICS:
+FDBK_SURVEY_ANSWER_LINK   FDBK_SURVEY_QUALTRICS_SAT (EQ)","OVERALL_CSAT_SCORE
+
+QUALTRICS:
+FDBK_SURVEY_ANSWER_LINK  FDBK_SURVEY_QUALTRICS_SAT (EQ)",", min(cast(p2.answertext as INTEGER)) AS OVERALL_CSAT_SCORE ","Ensure the OVERALL_CSAT_SCORE field logic for GOL Survey uses QID3 in  FDBK_SURVEY_ANSWER_LINK (QID3 ANSWER_NK3 / ANSWERTEXT)
+OR
+FDBK_SURVEY_QUALTRICS_SAT (EQ)
+
+If the score is 6 or 8 this will be -2 (N/A)","Use th same LOGIC as for Qualtrics INSTORE Survey
+QID20 or EQ
+
+Ensure the SCORE value follows Business Rule ",-2 (N/A),"Use FDBK_SURVEY_QUALTRICS_SAT.EQ
+If numeric [0-9] then leave as numeric
+If words Highly Satisfied, etc. then convert to numbers 1-5 as per INSTORE Survey
+Else use answer to QID20 as per INSTORE Survey","For the Feedback Button survey (SV_8B9js5zeIDa9UV0) use the score for QID209_7
+For the Popup survey (SV_2rSvStLzycecZOm) use the score for QID238
+
+LEFT JOIN (
+        SELECT
+            SURVEY_NK1,
+            ANSWERTEXT
+        FROM ADW_RDV.FDBK_SURVEY_ANSWER_LINK
+        WHERE ANSWER_NK1 = 'QID209_7'
+    ) q209 on (sqs.SURVEY_NK1 = q209.SURVEY_NK1)
+
+LEFT JOIN (
+        SELECT
+            SURVEY_NK1,
+            ANSWERTEXT
+        FROM ADW_RDV.FDBK_SURVEY_ANSWER_LINK
+        WHERE ANSWER_NK1 = 'QID238'
+    ) q238 on (sqs.SURVEY_NK1 = q238.SURVEY_NK1)","For CMC Surveys ('SV_24DeJwD5LkUQxoy','SV_cFOhrO8drcUbDa5','SV_5oODvo2t9M3Na5L','SV_bqPEsEHROd17xum','SV_87dKDEgmCsxovSl','SV_a3K1kBQbqNMvcbP','SV_6eTJrAcmCQvLf5b')
+ANSWER_NK1 = 'QID6'
+get the ANSWERTEXT"
+PF_URN,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",PF_URN,", CAST(min(sl.pf_urn_nk1) as VARCHAR(20)) as PF_URN",Same as Column D,Same as Column D,Same as Column D,Same as Column D (will always be NULL for Argos E2E),Same as column H,Same as Column D
+ORDER_NUMBER,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",ORDER_NUMBER,", CAST(min(sl.ORDER_NUMBER) as NUMBER) as ORDER_NUMBER","Same as Column D
+(This should be populated with GOL Order Number. Check  it is populated)",Same as Column D,Same as Column D,Same as Column D (will always be NULL for Argos E2E),Same as column H,Same as Column D
+AMOUNT_SPENT,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",AMOUNT_SPENT,", CAST(min(sl.AMOUNT_SPENT) as VARCHAR(50)) as ""AMOUNT_SPENT""",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+FAV_STORE_CD,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",FAV_STORE_CD,", NULL AS FAV_STORE_CD",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+GENDER,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",GENDER,", NULL AS GENDER",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+DEPARTMENT,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",DEPARTMENT,", NULL AS DEPARTMENT  --This will be NULL for Qualtrics",Same as Column D,NULL,NULL,NULL,Same as column H,Same as Column D
+DEPARTMENT1,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",DEPARTMENT1,",cast( (SELECT LISTAGG(DISTINCT d1.ANSWER_LABEL,'|') within group (Order by 1) FROM ADW_PROD.ADW_RDV.FDBK_SURVEY_ANSWER_LINK d1
+ WHERE d1.SURVEY_NK3 = 'QUALTRICS' AND d1.ANSWER_NK1 = 'QID4' AND d1.survey_nk1 = sl.SURVEY_NK1) as VARCHAR(2000)) AS DEPARTMENT1",Same as Column D,NULL,NULL,NULL,Same as column H,Same as Column D
+DEPARTMENT2,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",DEPARTMENT2,", NULL AS DEPARTMENT2  --This will be NULL for Qualtrics",Same as Column D,NULL,NULL,NULL,Same as column H,Same as Column D
+COUNTER,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",COUNTER,",cast((SELECT LISTAGG(DISTINCT d1.ANSWER_LABEL,'|') within group (Order by 1) FROM ADW_PROD.ADW_RDV.FDBK_SURVEY_ANSWER_LINK d1
+ WHERE d1.SURVEY_NK3 = 'QUALTRICS' AND d1.ANSWER_NK1 = 'QID8' AND d1.survey_nk1 = sl.SURVEY_NK1) as VARCHAR(2000)) AS COUNTER",Same as Column D,NULL,NULL,NULL,Same as column H,Same as Column D
+LIFE_STAGE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",LIFE_STAGE,", CAST(NULL as NUMBER) as LIFE_STAGE",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+START_DATE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",START_DATE,", CAST(min(sl.START_DATE) as TIMESTAMP_NTZ) as START_DATE",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+END_DATE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",END_DATE,", CAST(min(sl.END_DATE) as TIMESTAMP_NTZ) as END_DATE",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+TIME_OF_TRANSACTION,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",TIME_OF_TRANSACTION,", CAST(min(sl.TIME_OF_TRANSACTION) as NUMBER) as TIME_OF_TRANSACTION",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+TIME_BAND,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",TIME_BAND,", CAST(min(sl.TIME_BAND) as VARCHAR(255)) as TIME_BAND",Same as Column D,Same as Column D,Same as Column D,"Use FDBK_SURVEY_QUALTRICS_SAT.TIME_BAND if it is not null
+Else derive a time band using a CASE statement on FDBK_SURVEY_QUALTRICS_SAT.TIME_OF_TRANSACTION as for INSTORE survey ",Same as column H,Same as Column D
+STATUS,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",STATUS,", CAST(min(sl.STATUS) as NUMBER) as STATUS",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+PROGRESS,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",PROGRESS,", CAST(min(sl.PROGRESS) as NUMBER) as PROGRESS",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+DURATION,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",DURATION,", CAST(min(sl.DURATION) as NUMBER) as DURATION",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+FINISHED,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",FINISHED,", CAST(min(sl.FINISHED) as NUMBER) as FINISHED",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+DELIVERY_METHOD,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",DELIVERY_METHOD,", CAST(NULL as NUMBER) as DELIVERY_METHOD  ",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+PETROL_FILLING_STATION,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",PETROL_FILLING_STATION,", CAST(min(sl.PETROL_FILLING_STATION) as VARCHAR(5)) as PETROL_FILLING_STATION",Same as Column D,Same as Column D,Same as Column D,Same as Column D (will always be NULL for Argos E2E),Same as column H,Same as Column D
+DELIVERY_PASS,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,DELIVERY_PASS, ,Direct mapping to RDV table field DELIVERY_PASS,Same as Column D,Same as Column D,Same as Column D (will always be NULL for Argos E2E),Same as column H,Same as Column D
+EQ_DEF,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,EQ_DEF, ,Direct mapping to RDV table field EQ_DEF,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+REPORT_CHANNEL,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT
+ADW_PROPERTY_PL.DIM_STORE","SURVEY_TYPE
+
+DIM_STORE.STORE_TYPE_FINANCE_DESC",Same as Column K,Same as Column K,Same as Column K,Same as Column K,"CASE FDBK_SURVEY_QUALTRICS_SAT.SURVEY_PROJECT_ID
+WHEN 'SV_9vl3g4QgMWDwyuG' THEN 'SMS Driver Feedback'
+WHEN 'SV_6VDlpwWS8tuYjD8' THEN 'SMS Installation'
+WHEN 'SV_3UJeDf9c1VsHVYO' THEN
+      WHEN FDBK_SURVEY_QUALTRICS_SAT.SURVEY_SELECTION_TYPE = 6 THEN 'Home Delivery'
+      WHEN FDBK_SURVEY_QUALTRICS_SAT.SURVEY_SELECTION_TYPE = 9 THEN 'In Store Pick Up'
+      WHEN FDBK_SURVEY_QUALTRICS_SAT.SURVEY_SELECTION_TYPE = 1 THEN 'Walk in Store'","CASE FDBK_SURVEY_QUALTRICS_SAT.SURVEY_PROJECT_ID
+WHEN 'SV_9vl3g4QgMWDwyuG' THEN 'SMS Driver Feedback'
+WHEN 'SV_6VDlpwWS8tuYjD8' THEN 'SMS Installation'
+WHEN 'SV_8B9js5zeIDa9UV0' THEN 'Feedback'
+WHEN 'SV_2rSvStLzycecZOm' THEN 'PopUp'
+WHEN 'SV_3UJeDf9c1VsHVYO' THEN
+      WHEN FDBK_SURVEY_QUALTRICS_SAT.SURVEY_SELECTION_TYPE = 6 THEN 'Home Delivery'
+      WHEN FDBK_SURVEY_QUALTRICS_SAT.SURVEY_SELECTION_TYPE = 9 THEN 'In Store Pick Up'
+      WHEN FDBK_SURVEY_QUALTRICS_SAT.SURVEY_SELECTION_TYPE = 1 THEN 'Walk in Store'","UPPERCASE 
+Will be CMC for all CMC Surveys"
+SMART_SHOP_TYPE,ADW_RDV,"FDBK_SURVEY_LINK
+ADW_PROPERTY_PL.DIM_STORE_SMART_SHOP_TYPE_HIST",SMART_SHOP_TYPE,"Returns the type of Smartshop store it was at the time of the visit to provide time relevant data.
+case when FCS.SURVEY_TYPE='INSTORE'
+then  SSH.SMART_SHOP_TYPE
+else 'NOT APPLICABLE' end as H_SMART_SHOP_TYPE,",NULL,NULL,NULL,NULL,Same as column H,Same as Column D
+SURVEY_BRAND,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,SURVEY_PROJECT_ID,"Takes a value of SAINSBURYS for all Sainsburys surveys and a value of ARGOS for all Argos surveys. Use CASE statement based on SURVEY_PROJECT_ID:
+CASE SURVEY_PROJECT_ID
+WHEN 'SV_0eXofGHBALFYUwC' THEN SAINSBURYS
+WHEN 'SV_24DeJwD5LkUQxoy' THEN ARGOS
+WHEN 'SV_5bsA1xNDWa2My8t' THEN TU
+WHEN 'SV_5oODvo2t9M3Na5L' THEN HABITAT
+WHEN 'SV_5okht3tJXHtv0ma' THEN SAINSBURYS
+WHEN 'SV_6MtlOGAxp9i54GO' THEN SAINSBURYS
+WHEN 'SV_6eTJrAcmCQvLf5b' THEN ARGOS-TU
+WHEN 'SV_87dKDEgmCsxovSl' THEN SAINSBURYS
+WHEN 'SV_a3K1kBQbqNMvcbP' THEN SAINSBURYS
+WHEN 'SV_bqPEsEHROd17xum' THEN NECTAR
+WHEN 'SV_cFOhrO8drcUbDa5' THEN ARGOS
+WHEN 'SV_cZnMPk9qqMRo5fL' THEN SAINSBURYS
+WHEN 'SV_3UJeDf9c1VsHVYO' THEN 'ARGOS'
+WHEN 'SV_9vl3g4QgMWDwyuG' THEN 'ARGOS'
+WHEN 'SV_6VDlpwWS8tuYjD8' THEN 'ARGOS'
+",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,"Hardcode based on SURVEY_PROJECT_ID:
+WHEN 'SV_24DeJwD5LkUQxoy' THEN 'ARGOS'
+WHEN 'SV_cFOhrO8drcUbDa5' THEN 'ARGOS'
+WHEN 'SV_5oODvo2t9M3Na5L' THEN 'HABITAT'
+WHEN 'SV_bqPEsEHROd17xum' THEN 'NECTAR'
+WHEN 'SV_87dKDEgmCsxovSl' THEN 'SAINSBURYS'
+WHEN 'SV_a3K1kBQbqNMvcbP' THEN 'SAINSBURYS'
+WHEN 'SV_6eTJrAcmCQvLf5b' THEN 'ARGOS-TU'"
+TRANSACTION_TYPE_CD,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,TRANSACTION_KEY,NULL,NULL,NULL,NULL,"SUBSTRING(FDBK_SURVEY_QUALTRICS_SAT.TRANSACTION_KEY, 20, 2) and then remove the leading zeros to give a number from 1 to 13. This will take a value from the following list:
+1 - Home Delivery
+2 - FastTrack Reservation
+3 - FastTrack Collection
+4 - Reservation Collection
+5 - Ring Order
+6 - Walk-in
+7 - FastTrack Home Delivery
+8 - Clearance Store Walk-in
+9 - eBay FastTrack Reservation
+10 - eBay FastTrack Collection
+11 - eBay Home Delivery
+12 - Tu Home Delivery
+13 - Tu FastTrack Reservation",Same as column H,Same as Column D
+FULFILMENT_CHANNEL_CD,ADW_RDV,"FDBK_SURVEY_QUALTRICS_SAT
+
+FDBK_SURVEY_AMEND_METADATA_LINK",FULFILMENT_METHOD,NULL,NULL,NULL,NULL,"1 = 1 Man Store Collection -> 9 = Customer Collection - In-Store (C&R)  
+2 = 2 Man DC / Delivery    -> 3 = Home Delivery - Depot (2 Man Large Items)
+3 = Expert (3rd party installations) ->     3 = Home Delivery - Depot (2 Man Large Items)
+4 = Supplier (Direct) / 2 Man direct from Supplier ->     2 = Home Delivery - Supplier
+5 = 1 Man Hub To Home ->  1 = Home Delivery - Store (FTD)
+6 = 1 Man Hub To Home Return -> -1 = -1 Unknown
+7 = 1 Man DC -> 4 = Home Delivery - Small Items - 3rd party (1 Man - Yodel)
+8 = Prepayment Collection -> 8 = Customer Collection - FTC (Fast Track Collection)
+9 = Mailables ->  5 = Home Delivery - Small Items Mailed to Home
+10 = Store ->  7 = Customer Collection - In-Store
+11 = Tu Home Delivery -> -1 = -1 Unknown
+12 = Tu Prepayment Collection -> -1 = -1 Unknown
+13 = 1 Man RFC (Carrier Fulfilled) -> 6 = Home Delivery - Small Items Carrier fulfilment
+14 = 1 Man Store Collection (Insurance) -> 8 = Customer Collection - FTC (Fast Track Collection)
+
+If there has been a CHANGE / Amendment in the FULFILMENT_METHOD get the latest data from FDBK_SURVEY_AMEND_METADATA_LINK",Same as column H,Same as Column D
+FULFILMENT_METHOD_CD,ADW_RDV,"FDBK_SURVEY_QUALTRICS_SAT
+
+FDBK_SURVEY_AMEND_METADATA_LINK",FULFILMENT_METHOD,NULL,NULL,NULL,NULL,"Direct Mapping
+If there has been a CHANGE / Amendment in the FULFILMENT_METHOD get the latest data from FDBK_SURVEY_AMEND_METADATA_LINK",Direct Mapping,Same as Column D
+DEVICE_TYPE_CD,ADW_RDV,FDBK_SURVEY_ANSWER_LINK,ANSWER_NK3,NULL,"Get the answer to QID20 by selecting ANSWER_NK3 from ADW_RDV.FDBK_SURVEY_ANSWER_LINK for this response (SURVEY_NK1) and for ANSWER_NK1 = 'QID20'
+
+QID20: And on which of the following devices did you select &amp; order the <u>majority </u>of your online shop?
+ANSWER_NK3 = 1 (Desktop / Laptop computer)
+ANSWER_NK3 = 2 (Tablet (e.g. iPad, Kindle Fire, etc.))
+ANSWER_NK3 = 3 (Mini tablet (e.g. iPad mini, Kindle, etc.))
+ANSWER_NK3 = 4 (Mobile phone)
+ANSWER_NK3 = 5 (Games console or smart TV)
+ANSWER_NK3 = 6 (Other)",NULL,NULL,"For ARGOS Driver and Installation SMS, set to NULL as this question is not included
+For ARGOS E2E get the answer to QID202 by selecting ANSWER_NK3 from ADW_RDV.FDBK_SURVEY_ANSWER_LINK for this response (SURVEY_NK1) and for ANSWER_NK1 = 'QID202'. Use CASE statement to convert answers to device type:
+1 (Online via the desktop website) then 1 (Desktop)
+2 (Online via the mobile website) then 4 (Mobile)
+3 (Online via the tablet website) then 2 (Tablet)
+4 (Online via the app) then NULL
+5 (In store via a store tablet) then 6 (Other)
+6 (In store via the till) then 6 (Other)
+7 (Other (please specify)) then 6 (Other)",Set to NULL as this question is not included,Same as Column D
+WEBSITE_APP_CD,ADW_RDV,FDBK_SURVEY_ANSWER_LINK,ANSWER_NK3,NULL,"Get the answer to QID19 by selecting ANSWER_NK3 from ADW_RDV.FDBK_SURVEY_ANSWER_LINK for this response (SURVEY_NK1) and for ANSWER_NK1 = 'QID19'
+
+QID19: Thinking about your most recent order, on which of the following, did you select &amp; order the <u>majority </u>of your online shop?
+ANSWER_NK3 = 1 (Website)
+ANSWER_NK3 = 2 (App)",NULL,NULL,"For ARGOS Driver and Installation SMS, set to NULL as this question is not included
+Get the answer to QID202 by selecting ANSWER_NK3 from ADW_RDV.FDBK_SURVEY_ANSWER_LINK for this response (SURVEY_NK1) and for ANSWER_NK1 = 'QID202'. Use CASE statement to convert answers to website or app:
+1 (Online via the desktop website) then 1 (Website)
+2 (Online via the mobile website) then 1 (Website)
+3 (Online via the tablet website) then 1 (Website)
+4 (Online via the app) then 2 (App)
+5 (In store via a store tablet) then NULL
+6 (In store via the till) then NULL
+7 (Other (please specify)) then NULL",Set to NULL as this question is not included,Same as Column D
+HOME_DELIVERY_ORDER_KEY,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,HOME_DELIVERY_ORDER_KEY,NULL,NULL,NULL,NULL,Same as Column D,Same as column H,Same as Column D
+DELIVERY_DATE,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,DELIVERY_DATE,NULL,NULL,NULL,NULL,Same as Column D,Same as column H,Same as Column D
+BASKET_MISSION_CD,ADW_RDV,MISSION_TRANS_HDR_LINK,MISSION_SEGMENT_CD,"SELECT B.MISSION_SEGMENT_CD
+FROM ADW_PROD.ADW_BDV.FDBK_CSAT_SURVEY_REP A,
+ADW_PROD.ADW_RDV.MISSION_TRANS_HDR_LINK B
+WHERE A.STORE_CD = B.STORE_NK1 
+and A.TILL_NUM = B.TILL_NK1 
+and A.TRAN_DT = B.TRAN_DT 
+and A.TRAN_TM = B.TRAN_TM 
+and A.TRAN_NUMBER = B.TRAN_NUM 
+
+IF NULL DEFAULT to -1 for all surveys apart from POPUP and FEEDBACK whereby it will default to -2
+
+These are BASKET_MISSION_CD (NUMBER) to join to existing Orange Squad ADW_SALES_PL.DIM_SEGMENT_BASKET_MISSION.
+
+We will process and get this from ADW_RDV.MISSION_TRANS_HDR_LINK if all 5 transaction fields match. If they do not then it will default to -1 Unknown on ADW_BDV.FDBK_CSAT_SURVEY_REP → FACT_SURVEY_ANSWER for all surveys apart from the FEEDBACK or POPUP Survey whereby it will default to -2 Not Applicable.",Same as Column D,Default to -2,Default to -2,Same as Column D,Same as column H,Same as Column D
+RESERVATION_KEY,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,RESERVATION_KEY,NULL,NULL,NULL,NULL,Same as Column D,Same as column H,Same as Column D
+CMC_SURVEY_INSTANCE_ID,ADW_RDV,FDBK_SURVEY_QUALTRICS_SAT,CMC_SURVEY_INSTANCE_ID,NULL,NULL,NULL,NULL,NULL,NULL,Direct Mapping
+RECORD_SOURCE,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",SOURCE_SYSTEM_CD,", CAST(min(sl.SOURCE_SYSTEM_CD) as VARCHAR(6)) as RECORD_SOURCE",Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+TECHNICAL_METADATA,ADW_RDV,"FDBK_SURVEY_LINK
+FDBK_SURVEY_QUALTRICS_SAT",TECHNICAL_METADATA, ,Same as Column D,Same as Column D,Same as Column D,Same as Column D,Same as column H,Same as Column D
+ , , , , , , , , , ,
+ , , , , , , , , , ,
+ , , , , , , , , , ,
+ , , , , , , , , , ,
+ , , , , , , , , , ,
+ , , , , , , , , , ,
+ , , , , , , , , , ,

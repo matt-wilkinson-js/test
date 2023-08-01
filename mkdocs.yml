@@ -15,6 +15,8 @@ markdown_extensions:
       name: mermaid
       format: !!python/name:pymdownx.superfences.fence_code_format
 - pymdownx.mark
+- pymdownx.tabbed:
+      alternate_style: true
 - attr_list
 - pymdownx.emoji: null
 - def_list
@@ -38,6 +40,10 @@ nav:
 - ADW_BDV:
   - BDV Objects: adw_bdv/mapping_spec_template.md
   - BDV Example: adw_bdv/bdv_example.md
+  - BDV Example With Table Link: adw_bdv/bdv_example_with_table_link.md
+  - BDV Example Without Table: adw_bdv/bdv_example_without_table.md
+  - Feedback CSAT Survey Rep: adw_bdv/FDBK_CSAT_SURVEY_REP.md
+  - Feedback CSAT Survey Rep DDL Version: adw_bdv/FDBK_CSAT_SURVEY_REP_ddl_edit.md
 - ADW_INSERT_SCHEMA_PL:
   - FACT:
     - Fact Objects: adw_pl/mapping_spec_template.md
@@ -51,14 +57,21 @@ plugins:
 - table-reader
 - git-revision-date-localized
 - git-authors
-#- mermaid2
+- mermaid2:
+    version: 10.0.2
 repo_name: Insert Data Product Repo Name Here
 repo_url: https://github.com/sainsburys-tech/
 site_name: Insert Data Product Name here
 site_url: https://mappingspecexample.com/
 # Theme
 theme:
+  name: material
+  custom_dir: 'docs/css'
   features:
+  - instant.page_filter: true
+  - instant.page_search: true
+  - instant.navigation.expand: true
+  - instant.navigation.tabs: true
   - navigation.tabs
   - navigation.sections
   - toc.integrate
@@ -76,19 +89,26 @@ theme:
   icon:
     repo: fontawesome/brands/github
   language: en
-  name: material
   palette:
   - accent: green
-    primary: deep orange
+    primary: blue grey
     scheme: default
     toggle:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
   - accent: green
-    primary: deep orange
+    primary: blue grey
     scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
-#extra_javascript:
-  #- https://unpkg.com/mermaid/dist/mermaid.min.js
+  static_templates:
+    - '404.html'
+extra_css:
+  - 'css/custom.css'
+  - 'https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css'
+extra_javascript:
+  - 'https://unpkg.com/mermaid@10.0.2/dist/mermaid.min.js'
+  - 'https://code.jquery.com/jquery-3.5.1.min.js'
+  - 'https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js'
+  - 'js/extra.js'
