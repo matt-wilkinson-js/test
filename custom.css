@@ -1,0 +1,42 @@
+/* Changing table header background color */
+.md-typeset table thead {
+    background-color: #596C77; /* Change to your preferred color */
+  }
+  
+  /* Changing table header font color */
+  .md-typeset table thead th {
+    color: #fff; /* Change to your preferred color */
+  }
+  
+  /* Adding border to rows and columns */
+  .md-typeset table th, 
+  .md-typeset table td {
+    border: 1px solid #ddd; /* Change border style as needed */
+  }
+  
+  /* Adding table scroll */
+  .md-typeset table {
+    overflow: auto;
+    display: block;
+    max-height: 300px; /* Adjust as needed */
+  }
+
+  /* Fixed table layout and column width */
+  .md-typeset table {
+    table-layout: fixed;
+    width: 100%;
+  }
+  
+  .md-typeset table th,
+  .md-typeset table td {
+    width: 80px; /* Adjust as needed */
+    overflow: auto;
+    text-overflow: string;
+    white-space: nowrap;
+  }
+
+  /* Set width for the first column */
+.md-typeset table td:nth-child(1),
+.md-typeset table th:nth-child(1) {
+  width: 5px; /* Adjust as needed */
+}

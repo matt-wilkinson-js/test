@@ -1,0 +1,983 @@
+
+<!DOCTYPE html>
+
+<html class="no-js" lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1" name="viewport"/>
+<link href="https://mappingspecexample.com/adw_bdv/FDBK_CSAT_SURVEY_REP_ddl_edit/" rel="canonical"/>
+<link href="../FDBK_CSAT_SURVEY_REP/" rel="prev"/>
+<link href="../bdv_example%20copy%202/" rel="next"/>
+<link href="../../assets/images/favicon.png" rel="icon"/>
+<meta content="mkdocs-1.5.2, mkdocs-material-9.1.21" name="generator"/>
+<title>Feedback CSAT Survey Rep DDL Version - Insert Data Product Name here</title>
+<link href="../../assets/stylesheets/main.eebd395e.min.css" rel="stylesheet"/>
+<link href="../../assets/stylesheets/palette.ecc896b0.min.css" rel="stylesheet"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css?family=Mary+Ann:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
+<style>:root{--md-text-font:"Mary Ann";--md-code-font:"Roboto Mono"}</style>
+<link href="../../css/custom.css" rel="stylesheet"/>
+<link href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css" rel="stylesheet"/>
+<script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+</head>
+<body data-md-color-accent="green" data-md-color-primary="blue-grey" data-md-color-scheme="default" dir="ltr">
+<script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+<input autocomplete="off" class="md-toggle" data-md-toggle="drawer" id="__drawer" type="checkbox"/>
+<input autocomplete="off" class="md-toggle" data-md-toggle="search" id="__search" type="checkbox"/>
+<label class="md-overlay" for="__drawer"></label>
+<div data-md-component="skip">
+<a class="md-skip" href="#fdbk_csat_survey_rep">
+          Skip to content
+        </a>
+</div>
+<div data-md-component="announce">
+</div>
+<header class="md-header" data-md-component="header">
+<nav aria-label="Header" class="md-header__inner md-grid">
+<a aria-label="Insert Data Product Name here" class="md-header__button md-logo" data-md-component="logo" href="../.." title="Insert Data Product Name here">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+<label class="md-header__button md-icon" for="__drawer">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"></path></svg>
+</label>
+<div class="md-header__title" data-md-component="header-title">
+<div class="md-header__ellipsis">
+<div class="md-header__topic">
+<span class="md-ellipsis">
+            Insert Data Product Name here
+          </span>
+</div>
+<div class="md-header__topic" data-md-component="header-topic">
+<span class="md-ellipsis">
+            
+              Feedback CSAT Survey Rep DDL Version
+            
+          </span>
+</div>
+</div>
+</div>
+<form class="md-header__option" data-md-component="palette">
+<input aria-label="Switch to dark mode" class="md-option" data-md-color-accent="green" data-md-color-media="" data-md-color-primary="blue-grey" data-md-color-scheme="default" id="__palette_1" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_2" hidden="" title="Switch to dark mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"></path></svg>
+</label>
+<input aria-label="Switch to light mode" class="md-option" data-md-color-accent="green" data-md-color-media="" data-md-color-primary="blue-grey" data-md-color-scheme="slate" id="__palette_2" name="__palette" type="radio"/>
+<label class="md-header__button md-icon" for="__palette_1" hidden="" title="Switch to light mode">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"></path></svg>
+</label>
+</form>
+<label class="md-header__button md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+</label>
+<div class="md-search" data-md-component="search" role="dialog">
+<label class="md-search__overlay" for="__search"></label>
+<div class="md-search__inner" role="search">
+<form class="md-search__form" name="search">
+<input aria-label="Search" autocapitalize="off" autocomplete="off" autocorrect="off" class="md-search__input" data-md-component="search-query" name="query" placeholder="Search" required="" spellcheck="false" type="text"/>
+<label class="md-search__icon md-icon" for="__search">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"></path></svg>
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"></path></svg>
+</label>
+<nav aria-label="Search" class="md-search__options">
+<button aria-label="Clear" class="md-search__icon md-icon" tabindex="-1" title="Clear" type="reset">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"></path></svg>
+</button>
+</nav>
+<div class="md-search__suggest" data-md-component="search-suggest"></div>
+</form>
+<div class="md-search__output">
+<div class="md-search__scrollwrap" data-md-scrollfix="">
+<div class="md-search-result" data-md-component="search-result">
+<div class="md-search-result__meta">
+            Initializing search
+          </div>
+<ol class="md-search-result__list" role="presentation"></ol>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="md-header__source">
+<a class="md-source" data-md-component="source" href="https://github.com/sainsburys-tech/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    Insert Data Product Repo Name Here
+  </div>
+</a>
+</div>
+</nav>
+</header>
+<div class="md-container" data-md-component="container">
+<nav aria-label="Tabs" class="md-tabs" data-md-component="tabs">
+<div class="md-grid">
+<ul class="md-tabs__list">
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../..">
+        Home
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../adw_stage/mapping_spec_template/">
+        ADW_STAGE
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../adw_rdv/mapping_spec_template/">
+        ADW_RDV
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link md-tabs__link--active" href="../mapping_spec_template/">
+        ADW_BDV
+      </a>
+</li>
+<li class="md-tabs__item">
+<a class="md-tabs__link" href="../../adw_pl/mapping_spec_template/">
+        ADW_INSERT_SCHEMA_PL
+      </a>
+</li>
+</ul>
+</div>
+</nav>
+<main class="md-main" data-md-component="main">
+<div class="md-main__inner md-grid">
+<div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+<div class="md-sidebar__scrollwrap">
+<div class="md-sidebar__inner">
+<nav aria-label="Navigation" class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" data-md-level="0">
+<label class="md-nav__title" for="__drawer">
+<a aria-label="Insert Data Product Name here" class="md-nav__button md-logo" data-md-component="logo" href="../.." title="Insert Data Product Name here">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"></path></svg>
+</a>
+    Insert Data Product Name here
+  </label>
+<div class="md-nav__source">
+<a class="md-source" data-md-component="source" href="https://github.com/sainsburys-tech/" title="Go to repository">
+<div class="md-source__icon md-icon">
+<svg viewbox="0 0 496 512" xmlns="http://www.w3.org/2000/svg"><!--! Font Awesome Free 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2023 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"></path></svg>
+</div>
+<div class="md-source__repository">
+    Insert Data Product Repo Name Here
+  </div>
+</a>
+</div>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_1_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_1">
+<span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../..">
+        About
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          ADW_STAGE
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_2_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_2">
+<span class="md-nav__icon md-icon"></span>
+          ADW_STAGE
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_stage/mapping_spec_template/">
+        Stage Layer
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          ADW_RDV
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_3">
+<span class="md-nav__icon md-icon"></span>
+          ADW_RDV
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+          HUB
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_1">
+<span class="md-nav__icon md-icon"></span>
+          HUB
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_rdv/mapping_spec_template/">
+        Hub Objects
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+          LINK
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_2">
+<span class="md-nav__icon md-icon"></span>
+          LINK
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_rdv/mapping_spec_template/">
+        Link Objects
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_3_3" type="checkbox"/>
+<label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+          SAT
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_3_3_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_3_3">
+<span class="md-nav__icon md-icon"></span>
+          SAT
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_rdv/mapping_spec_template/">
+        Sat Objects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_rdv/rdv_example/">
+        RDV Example
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--active md-nav__item--nested">
+<input checked="" class="md-nav__toggle md-toggle" id="__nav_4" type="checkbox"/>
+<label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          ADW_BDV
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="true" aria-labelledby="__nav_4_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_4">
+<span class="md-nav__icon md-icon"></span>
+          ADW_BDV
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../mapping_spec_template/">
+        BDV Objects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example/">
+        BDV Example
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example_with_table_link/">
+        BDV Example With Table Link
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example_without_table/">
+        BDV Example Without Table
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../FDBK_CSAT_SURVEY_REP/">
+        Feedback CSAT Survey Rep
+      </a>
+</li>
+<li class="md-nav__item md-nav__item--active">
+<input class="md-nav__toggle md-toggle" id="__toc" type="checkbox"/>
+<label class="md-nav__link md-nav__link--active" for="__toc">
+          Feedback CSAT Survey Rep DDL Version
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<a class="md-nav__link md-nav__link--active" href="./">
+        Feedback CSAT Survey Rep DDL Version
+      </a>
+<nav aria-label="Table of contents" class="md-nav md-nav--secondary">
+<label class="md-nav__title" for="__toc">
+<span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+<ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="#description">
+    Description
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#selection-criteria">
+    Selection Criteria
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#target-to-source">
+    Target to Source
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#mapping-steps">
+    Mapping Steps
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#diagram">
+    Diagram
+  </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="#tests-checks">
+    Tests &amp; Checks
+  </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%202/">
+        Test 1
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%203/">
+        Test 2
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%204/">
+        Test 3
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%205/">
+        Test 4
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%206/">
+        Test 5
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%207/">
+        Test 6
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%208/">
+        Test 7
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%209/">
+        Test 8
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2010/">
+        Test 9
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2011/">
+        Test 10
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2012/">
+        Test 11
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2013/">
+        Test 12
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2014/">
+        Test 13
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2015/">
+        Test 14
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2016/">
+        Test 15
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2017/">
+        Test 16
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2018/">
+        Test 17
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2019/">
+        Test 18
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2020/">
+        Test 19
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2021/">
+        Test 20
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2022/">
+        Test 21
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2023/">
+        Test 22
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2024/">
+        Test 23
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2025/">
+        Test 24
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2026/">
+        Test 25
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2027/">
+        Test 26
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2028/">
+        Test 27
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2029/">
+        Test 28
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2030/">
+        Test 29
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2031/">
+        Test 30
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2032/">
+        Test 31
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2033/">
+        Test 32
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2034/">
+        Test 33
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2035/">
+        Test 34
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2036/">
+        Test 35
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2037/">
+        Test 36
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2038/">
+        Test 37
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2040/">
+        Test 38
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2041/">
+        Test 39
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2042/">
+        Test 40
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2043/">
+        Test 41
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2044/">
+        Test 42
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2045/">
+        Test 43
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2046/">
+        Test 44
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2047/">
+        Test 45
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2048/">
+        Test 46
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2049/">
+        Test 47
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2050/">
+        Test 48
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../bdv_example%20copy%2039/">
+        Test 49
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          ADW_INSERT_SCHEMA_PL
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_label" class="md-nav" data-md-level="1">
+<label class="md-nav__title" for="__nav_5">
+<span class="md-nav__icon md-icon"></span>
+          ADW_INSERT_SCHEMA_PL
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_1" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+          FACT
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_1_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_1">
+<span class="md-nav__icon md-icon"></span>
+          FACT
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_pl/mapping_spec_template/">
+        Fact Objects
+      </a>
+</li>
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_pl/pl_example/">
+        PL Example
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+<li class="md-nav__item md-nav__item--section md-nav__item--nested">
+<input class="md-nav__toggle md-toggle md-toggle--indeterminate" id="__nav_5_2" type="checkbox"/>
+<label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+          DIMENSION
+          <span class="md-nav__icon md-icon"></span>
+</label>
+<nav aria-expanded="false" aria-labelledby="__nav_5_2_label" class="md-nav" data-md-level="2">
+<label class="md-nav__title" for="__nav_5_2">
+<span class="md-nav__icon md-icon"></span>
+          DIMENSION
+        </label>
+<ul class="md-nav__list" data-md-scrollfix="">
+<li class="md-nav__item">
+<a class="md-nav__link" href="../../adw_pl/mapping_spec_template/">
+        Dim Objects
+      </a>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</li>
+</ul>
+</nav>
+</div>
+</div>
+</div>
+<div class="md-content" data-md-component="content">
+<article class="md-content__inner md-typeset">
+<h1 id="fdbk_csat_survey_rep"><strong>FDBK_CSAT_SURVEY_REP</strong></h1>
+<p><strong>Authors:</strong> <span class="git-page-authors git-authors"><a href="mailto:117099989+matt-wilkinson-js@users.noreply.github.com">Matt Wilkinson</a></span><br/>
+<strong>Revision Date:</strong> <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span></p>
+<h2 id="description"><strong>Description</strong></h2>
+<p>This table contain survey response details for each CSAT survey that has been completed by a customer. This table contains all of the header data for an individual response, including the date of the visit, the date of the survey and the store visited (where relevant). If available a link to the survey responder's Nectar account is also available. There will be one row in this table for each survey response. This table is used to populate FLF_CSAT_SURVEY with survey responses.</p>
+<h2 id="selection-criteria"><strong>Selection Criteria</strong></h2>
+<p>This BDV object contains two sources (SMG Survey and Qualtrics Survey), as a result we must identify which data we want to take from each source and ensure no duplication in the data. </p>
+<p><strong>Valid Records from RDV</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-0-1" id="__codelineno-0-1" name="__codelineno-0-1"></a>RECORD_DELETED_FLAG_FLAG = 'N'
+</code></pre></div>
+<strong>Survey Project Criteria</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-1-1" id="__codelineno-1-1" name="__codelineno-1-1"></a>SURVEY_PROJECT_ID IN (
+<a href="#__codelineno-1-2" id="__codelineno-1-2" name="__codelineno-1-2"></a>'SMG_INSTORE',           -- SMG Instore Survey (Historical)
+<a href="#__codelineno-1-3" id="__codelineno-1-3" name="__codelineno-1-3"></a>'SMG_ONLINE',            --SMG GOL Survey (Historical)
+<a href="#__codelineno-1-4" id="__codelineno-1-4" name="__codelineno-1-4"></a>'SMG_POPUP',             --SMG Popup Survey (Historical)
+<a href="#__codelineno-1-5" id="__codelineno-1-5" name="__codelineno-1-5"></a>'SMG_FEEDBACK',          --SMG Feedback Survey (Historical)
+<a href="#__codelineno-1-6" id="__codelineno-1-6" name="__codelineno-1-6"></a>'SV_cZnMPk9qqMRo5fL',    --Lettuce Know - Instore
+<a href="#__codelineno-1-7" id="__codelineno-1-7" name="__codelineno-1-7"></a>'SV_6MtlOGAxp9i54GO',    --Sainsbury's - GOL Delivery
+<a href="#__codelineno-1-8" id="__codelineno-1-8" name="__codelineno-1-8"></a>'SV_5okht3tJXHtv0ma',    --Sainsburys - Pop Up Survey
+<a href="#__codelineno-1-9" id="__codelineno-1-9" name="__codelineno-1-9"></a>'SV_0eXofGHBALFYUwC',    --Sainsburys - Feedback button
+<a href="#__codelineno-1-10" id="__codelineno-1-10" name="__codelineno-1-10"></a>'SV_5bsA1xNDWa2My8t',    --Tu CSAT
+<a href="#__codelineno-1-11" id="__codelineno-1-11" name="__codelineno-1-11"></a>'SV_5oODvo2t9M3Na5L',    --Contact Centre: Habitat post call SMS survey
+<a href="#__codelineno-1-12" id="__codelineno-1-12" name="__codelineno-1-12"></a>'SV_6eTJrAcmCQvLf5b',    --Contact Centre: Tu Clothing post call SMS survey - Argos
+<a href="#__codelineno-1-13" id="__codelineno-1-13" name="__codelineno-1-13"></a>'SV_24DeJwD5LkUQxoy',    -- Contact Centre: Argos Deflection post call SMS survey
+<a href="#__codelineno-1-14" id="__codelineno-1-14" name="__codelineno-1-14"></a>'SV_87dKDEgmCsxovSl',    --Contact Centre: Sainsbury's Careline post call SMS survey
+<a href="#__codelineno-1-15" id="__codelineno-1-15" name="__codelineno-1-15"></a>'SV_a3K1kBQbqNMvcbP',    --Contact Centre: Sainsbury's GOL post call SMS survey
+<a href="#__codelineno-1-16" id="__codelineno-1-16" name="__codelineno-1-16"></a>'SV_bqPEsEHROd17xum',    --Contact Centre: Nectar post call SMS survey
+<a href="#__codelineno-1-17" id="__codelineno-1-17" name="__codelineno-1-17"></a>'SV_cFOhrO8drcUbDa5',    --Contact Centre: Argos post call SMS survey
+<a href="#__codelineno-1-18" id="__codelineno-1-18" name="__codelineno-1-18"></a>'SV_6VDlpwWS8tuYjD8',    --Argos Installation SMS Survey
+<a href="#__codelineno-1-19" id="__codelineno-1-19" name="__codelineno-1-19"></a>'SV_2rSvStLzycecZOm',    --Argos Popup Survey 
+<a href="#__codelineno-1-20" id="__codelineno-1-20" name="__codelineno-1-20"></a>'SV_8B9js5zeIDa9UV0',    --Argos Feedback Survey
+<a href="#__codelineno-1-21" id="__codelineno-1-21" name="__codelineno-1-21"></a>'SV_9vl3g4QgMWDwyuG',    --Argos Driver Feedback SMS Survey
+<a href="#__codelineno-1-22" id="__codelineno-1-22" name="__codelineno-1-22"></a>'SV_3UJeDf9c1VsHVYO'     --Argos E2E Survey
+<a href="#__codelineno-1-23" id="__codelineno-1-23" name="__codelineno-1-23"></a>)
+</code></pre></div></p>
+<h2 id="target-to-source"><strong>Target to Source</strong></h2>
+<p>Below DDL describes target system and column. Column comments contain source tables.</p>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-2-1" id="__codelineno-2-1" name="__codelineno-2-1"></a><span class="k">CREATE</span><span class="w"> </span><span class="k">OR</span><span class="w"> </span><span class="k">REPLACE</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ADW_BDV</span><span class="p">.</span><span class="n">CMC_CUSTOMER_CONTACT_BR</span>
+<a href="#__codelineno-2-2" id="__codelineno-2-2" name="__codelineno-2-2"></a><span class="p">(</span>
+<a href="#__codelineno-2-3" id="__codelineno-2-3" name="__codelineno-2-3"></a><span class="w"> </span><span class="n">CMC_CUSTOMER_CONTACT_ID</span><span class="w">               </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Source: ADW_RDV.COLUMN_NAME Description: Unique Identifier for a CMC Customer Contract.'</span><span class="p">,</span>
+<a href="#__codelineno-2-4" id="__codelineno-2-4" name="__codelineno-2-4"></a><span class="w"> </span><span class="n">SURVEY_PROJECT_ID</span><span class="w">                     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Source: ADW_RDV.COLUMN_NAME Description: Unique Identifier for the Survey Project in Qualtrics. A Survey Project can be used many times. This is the Qualtrics Survey Project ID ie: SV_24DeJwD5LkUQxoy, SV_cFOhrO8drcUbDa5, SV_5oODvo2t9M3Na5L, SV_bqPEsEHROd17xum, SV_87dKDEgmCsxovSl, SV_a3K1kBQbqNMvcbP, SV_6eTJrAcmCQvLf5b'</span><span class="p">,</span>
+<a href="#__codelineno-2-5" id="__codelineno-2-5" name="__codelineno-2-5"></a><span class="w"> </span><span class="n">SURVEY_PROJECT_NAME</span><span class="w">                   </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">500</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Source: ADW_RDV.COLUMN_NAME Description:Survey Project Name'</span><span class="p">,</span>
+<a href="#__codelineno-2-6" id="__codelineno-2-6" name="__codelineno-2-6"></a><span class="w"> </span><span class="n">CMC_SURVEY_CHANNEL</span><span class="w">                    </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Channel for the CMC Metadata ie: VOICE, EMAIL, CHAT.'</span><span class="p">,</span>
+<a href="#__codelineno-2-7" id="__codelineno-2-7" name="__codelineno-2-7"></a><span class="w"> </span><span class="n">CMC_SURVEY_BRAND</span><span class="w">                      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Brand linked to the CMC Metadata ie: ARGOS, SAINSBURYS or HABITAT.'</span><span class="p">,</span>
+<a href="#__codelineno-2-8" id="__codelineno-2-8" name="__codelineno-2-8"></a><span class="w"> </span><span class="n">CMC_SURVEY_DEPARTMENT</span><span class="w">                 </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Department that handled the call relating to the Survey instance. Departments are not unique to brands.'</span><span class="p">,</span>
+<a href="#__codelineno-2-9" id="__codelineno-2-9" name="__codelineno-2-9"></a><span class="w"> </span><span class="n">CMC_SURVEY_INSTANCE_ID</span><span class="w">                </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Unique Identifier for the Instance of the Survey. This is the CMC (Contact Management Centre) instance of a Survey that was sent to the Customer after the call to the contact centre.'</span><span class="p">,</span>
+<a href="#__codelineno-2-10" id="__codelineno-2-10" name="__codelineno-2-10"></a><span class="w"> </span><span class="n">CMC_SURVEY_INSTANCE_URL</span><span class="w">               </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">1000</span><span class="p">)</span><span class="w">         </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The URL to access the Survey sent to the Customer.'</span><span class="p">,</span>
+<a href="#__codelineno-2-11" id="__codelineno-2-11" name="__codelineno-2-11"></a><span class="w"> </span><span class="n">CMC_NEW_CONTACT_BRAND</span><span class="w">                 </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Brand linked to the CMC Metadata'</span><span class="p">,</span>
+<a href="#__codelineno-2-12" id="__codelineno-2-12" name="__codelineno-2-12"></a><span class="w"> </span><span class="n">CMC_NEW_CONTACT_CHANNEL</span><span class="w">               </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w">          </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Channel for the CMC Metadata'</span><span class="p">,</span>
+<a href="#__codelineno-2-13" id="__codelineno-2-13" name="__codelineno-2-13"></a><span class="w"> </span><span class="n">CMC_NEW_CONTACT_CREATED_TS</span><span class="w">            </span><span class="n">timestamp_ntz</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w">      </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The datetime the record was created'</span><span class="p">,</span>
+<a href="#__codelineno-2-14" id="__codelineno-2-14" name="__codelineno-2-14"></a><span class="w"> </span><span class="n">CMC_NEW_CONTACT_CREATED_DT</span><span class="w">            </span><span class="nb">date</span><span class="w">                  </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The date the record was created'</span><span class="p">,</span>
+<a href="#__codelineno-2-15" id="__codelineno-2-15" name="__codelineno-2-15"></a><span class="w"> </span><span class="n">CMC_NEW_CONTACT_MODIFIED_TS</span><span class="w">           </span><span class="n">timestamp_ntz</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w">      </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The datetime the record was modified'</span><span class="p">,</span>
+<a href="#__codelineno-2-16" id="__codelineno-2-16" name="__codelineno-2-16"></a><span class="w"> </span><span class="n">CMC_NEW_CONTACT_MODIFIED_DT</span><span class="w">           </span><span class="nb">date</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The date the record was modified'</span><span class="p">,</span>
+<a href="#__codelineno-2-17" id="__codelineno-2-17" name="__codelineno-2-17"></a><span class="w"> </span><span class="n">CALL_END_BRAND</span><span class="w">                        </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Brand linked to the CMC Metadata ie: ARGOS, SAINSBURYS or HABITAT'</span><span class="p">,</span>
+<a href="#__codelineno-2-18" id="__codelineno-2-18" name="__codelineno-2-18"></a><span class="w"> </span><span class="n">CALL_END_DEPARTMENT</span><span class="w">                   </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Department that handled the call last. Departments are not unique to brands.'</span><span class="p">,</span>
+<a href="#__codelineno-2-19" id="__codelineno-2-19" name="__codelineno-2-19"></a><span class="w"> </span><span class="n">CALL_END_TELEPHONE_NUM</span><span class="w">                </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Customer''s Phone Number'</span><span class="p">,</span>
+<a href="#__codelineno-2-20" id="__codelineno-2-20" name="__codelineno-2-20"></a><span class="w"> </span><span class="n">CALL_END_SURVEY_FLAG</span><span class="w">                  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'When the call ends does the Customer want to complete a Survey? TRUE/FALSE'</span><span class="p">,</span>
+<a href="#__codelineno-2-21" id="__codelineno-2-21" name="__codelineno-2-21"></a><span class="w"> </span><span class="n">CALL_END_STATUS</span><span class="w">                       </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'What was the status of the call when it ended?•ABANDONED = Customer Hung Up•CLOSED = Contact Centre is Closed•DEFLECTION_SUCCESSFUL = Customer was Deflected and never spoke to an Agent•HANDLED = Agent Handled the Call•TRANSFERRED_OUT = Call transferred to an external number'</span><span class="p">,</span>
+<a href="#__codelineno-2-22" id="__codelineno-2-22" name="__codelineno-2-22"></a><span class="w"> </span><span class="n">CALL_END_TS</span><span class="w">                           </span><span class="n">timestamp_ntz</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Date Time for when the Call ended'</span><span class="p">,</span>
+<a href="#__codelineno-2-23" id="__codelineno-2-23" name="__codelineno-2-23"></a><span class="w"> </span><span class="n">CALL_END_DT</span><span class="w">                           </span><span class="nb">date</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Date for when the Call ended'</span><span class="p">,</span>
+<a href="#__codelineno-2-24" id="__codelineno-2-24" name="__codelineno-2-24"></a><span class="w"> </span><span class="n">CONTEXT_ID</span><span class="w">                            </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Unique Identifier in Oceana'</span><span class="p">,</span>
+<a href="#__codelineno-2-25" id="__codelineno-2-25" name="__codelineno-2-25"></a><span class="w"> </span><span class="n">CONTEXT_CREATION_TS</span><span class="w">                   </span><span class="n">timestamp_ntz</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The datetime the record was created'</span><span class="p">,</span>
+<a href="#__codelineno-2-26" id="__codelineno-2-26" name="__codelineno-2-26"></a><span class="w"> </span><span class="n">CONTEXT_CREATION_DT</span><span class="w">                   </span><span class="nb">date</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The date the record was created'</span><span class="p">,</span>
+<a href="#__codelineno-2-27" id="__codelineno-2-27" name="__codelineno-2-27"></a><span class="w"> </span><span class="n">CONTEXT_ESTIMATED_WAITTIME</span><span class="w">            </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The estimated wait time for the communication with the Customer.'</span><span class="p">,</span>
+<a href="#__codelineno-2-28" id="__codelineno-2-28" name="__codelineno-2-28"></a><span class="w"> </span><span class="n">CONTEXT_ID_STATUS</span><span class="w">                     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Status for the context of the communication.'</span><span class="p">,</span>
+<a href="#__codelineno-2-29" id="__codelineno-2-29" name="__codelineno-2-29"></a><span class="w"> </span><span class="n">CONTEXT_AUTH_STATUS</span><span class="w">                   </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Authorized Status for the context of the communication.'</span><span class="p">,</span>
+<a href="#__codelineno-2-30" id="__codelineno-2-30" name="__codelineno-2-30"></a><span class="w"> </span><span class="n">CONTEXT_ORDER_NUMBER</span><span class="w">                  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Order Number relating to the context for the communication with the Customer.'</span><span class="p">,</span>
+<a href="#__codelineno-2-31" id="__codelineno-2-31" name="__codelineno-2-31"></a><span class="w"> </span><span class="n">CONTEXT_TREATMENT_VDN</span><span class="w">                 </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The treatment of the VDN (vector directory number). That is the extension on an automatic call distributor that directs the incoming call to a vector or routing the call to a destination or location at the call centre.'</span><span class="p">,</span>
+<a href="#__codelineno-2-32" id="__codelineno-2-32" name="__codelineno-2-32"></a><span class="w"> </span><span class="n">CONTEXT_SURVEY_ACCEPTED</span><span class="w">               </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Did the Customer accept to complete a survey? true or false'</span><span class="p">,</span>
+<a href="#__codelineno-2-33" id="__codelineno-2-33" name="__codelineno-2-33"></a><span class="w"> </span><span class="n">CONTEXT_UCID</span><span class="w">                          </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Unique Call Identifier in Aura. Unique Call Identifier from Aura (which transferred to Oceana)'</span><span class="p">,</span>
+<a href="#__codelineno-2-34" id="__codelineno-2-34" name="__codelineno-2-34"></a><span class="w"> </span><span class="n">CONTEXT_TOPIC</span><span class="w">                         </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The topic for the creation of the context record.'</span><span class="p">,</span>
+<a href="#__codelineno-2-35" id="__codelineno-2-35" name="__codelineno-2-35"></a><span class="w"> </span><span class="n">CONTEXT_SCHEMA_STRATEGY</span><span class="w">               </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The strategy for the context record.'</span><span class="p">,</span>
+<a href="#__codelineno-2-36" id="__codelineno-2-36" name="__codelineno-2-36"></a><span class="w"> </span><span class="n">CONTEXT_FIRST_ATTRIBUTES_DEPARTMENT</span><span class="w">   </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context First: Department that handled the call. Departments are not unique to brands.'</span><span class="p">,</span>
+<a href="#__codelineno-2-37" id="__codelineno-2-37" name="__codelineno-2-37"></a><span class="w"> </span><span class="n">CONTEXT_FIRST_ATTRIBUTES_CHANNEL</span><span class="w">      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context First: The Channel for the CMC Metadata ie: VOICE, EMAIL, CHAT'</span><span class="p">,</span>
+<a href="#__codelineno-2-38" id="__codelineno-2-38" name="__codelineno-2-38"></a><span class="w"> </span><span class="n">CONTEXT_FIRST_ATTRIBUTES_SITE_STATUS</span><span class="w">  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context First: The schema site status ie: Online'</span><span class="p">,</span>
+<a href="#__codelineno-2-39" id="__codelineno-2-39" name="__codelineno-2-39"></a><span class="w"> </span><span class="n">CONTEXT_FIRST_ATTRIBUTES_INTENT</span><span class="w">       </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context First: The intent of the context for the record ie: 2ManPostSecondary, 1ManPrimary, NULL'</span><span class="p">,</span>
+<a href="#__codelineno-2-40" id="__codelineno-2-40" name="__codelineno-2-40"></a><span class="w"> </span><span class="n">CONTEXT_FIRST_ATTRIBUTES_INDIVIDUAL</span><span class="w">   </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context First: The attributes of the individual of the record.'</span><span class="p">,</span>
+<a href="#__codelineno-2-41" id="__codelineno-2-41" name="__codelineno-2-41"></a><span class="w"> </span><span class="n">CONTEXT_FIRST_RANK</span><span class="w">                    </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context First: The rank for the record.'</span><span class="p">,</span>
+<a href="#__codelineno-2-42" id="__codelineno-2-42" name="__codelineno-2-42"></a><span class="w"> </span><span class="n">CONTEXT_FIRST_PRIORITY</span><span class="w">                </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">.</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context First: The priority for the record.'</span><span class="p">,</span>
+<a href="#__codelineno-2-43" id="__codelineno-2-43" name="__codelineno-2-43"></a><span class="w"> </span><span class="n">CONTEXT_SECOND_ATTRIBUTES_DEPARTMENT</span><span class="w">  </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context Second: Department that handled the call. Departments are not unique to brands.'</span><span class="p">,</span>
+<a href="#__codelineno-2-44" id="__codelineno-2-44" name="__codelineno-2-44"></a><span class="w"> </span><span class="n">CONTEXT_SECOND_ATTRIBUTES_CHANNEL</span><span class="w">     </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context Second: The Channel for the CMC Metadata ie: VOICE, EMAIL, CHAT'</span><span class="p">,</span>
+<a href="#__codelineno-2-45" id="__codelineno-2-45" name="__codelineno-2-45"></a><span class="w"> </span><span class="n">CONTEXT_SECOND_ATTRIBUTES_SITE_STATUS</span><span class="w"> </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context Second: The schema site status ie: Online'</span><span class="p">,</span>
+<a href="#__codelineno-2-46" id="__codelineno-2-46" name="__codelineno-2-46"></a><span class="w"> </span><span class="n">CONTEXT_SECOND_ATTRIBUTES_INTENT</span><span class="w">      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context Second: The intent of the context for the record ie: 2ManPostSecondary, 1ManPrimary, NULL'</span><span class="p">,</span>
+<a href="#__codelineno-2-47" id="__codelineno-2-47" name="__codelineno-2-47"></a><span class="w"> </span><span class="n">CONTEXT_SECOND_RANK</span><span class="w">                   </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context Second: The rank for the record.'</span><span class="p">,</span>
+<a href="#__codelineno-2-48" id="__codelineno-2-48" name="__codelineno-2-48"></a><span class="w"> </span><span class="n">CONTEXT_SECOND_PRIORITY</span><span class="w">               </span><span class="nb">number</span><span class="p">(</span><span class="mi">38</span><span class="p">,</span><span class="mi">0</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Context Second: The priority for the record.'</span><span class="p">,</span>
+<a href="#__codelineno-2-49" id="__codelineno-2-49" name="__codelineno-2-49"></a><span class="w"> </span><span class="n">CONTEXT_SCHEMA_DATA_CENTER</span><span class="w">            </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Data Centre sources for the record ie: Primary'</span><span class="p">,</span>
+<a href="#__codelineno-2-50" id="__codelineno-2-50" name="__codelineno-2-50"></a><span class="w"> </span><span class="n">CONTEXT_SCHEMA_CUSTOMER_ID</span><span class="w">            </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The Customer ID if available.'</span><span class="p">,</span>
+<a href="#__codelineno-2-51" id="__codelineno-2-51" name="__codelineno-2-51"></a><span class="w"> </span><span class="n">CONTEXT_SCHEMA_ORDERING</span><span class="w">               </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The ordering of the record if available.'</span><span class="p">,</span>
+<a href="#__codelineno-2-52" id="__codelineno-2-52" name="__codelineno-2-52"></a><span class="w"> </span><span class="n">CONTEXT_GROUP_ID</span><span class="w">                      </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">128</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The groupid of the record if available.'</span><span class="p">,</span>
+<a href="#__codelineno-2-53" id="__codelineno-2-53" name="__codelineno-2-53"></a><span class="w"> </span><span class="n">CONTEXT_PERSIST_TO_EDM</span><span class="w">                </span><span class="nb">varchar</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'The context of the record Persist to Electronic Direct Marketing - TRUE, FALSE'</span><span class="p">,</span>
+<a href="#__codelineno-2-54" id="__codelineno-2-54" name="__codelineno-2-54"></a><span class="w"> </span><span class="n">LOAD_TS</span><span class="w">                               </span><span class="n">timestamp_ntz</span><span class="p">(</span><span class="mi">9</span><span class="p">)</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'Timestamp recording when this row was inserted.'</span><span class="p">,</span>
+<a href="#__codelineno-2-55" id="__codelineno-2-55" name="__codelineno-2-55"></a><span class="w"> </span><span class="n">TECHNICAL_METADATA</span><span class="w">                    </span><span class="n">variant</span><span class="w"> </span><span class="k">NOT</span><span class="w"> </span><span class="k">NULL</span><span class="w"> </span><span class="k">COMMENT</span><span class="w"> </span><span class="s1">'A JSON message of support fields. See Aspire modelling standards. Can be any of these:  BATCH_ID,RECORD_ARRIVAL_TS, HASH_DIFF, JOB NAME, LOAD_TS, REASON_CD, RECORD_DELETED_FLAG, RECORD_ID, SOURCE_PATH, SOURCE_SYSTEM_CD, ETL_FRAMEWORK'</span><span class="p">,</span>
+<a href="#__codelineno-2-56" id="__codelineno-2-56" name="__codelineno-2-56"></a><span class="w"> </span><span class="k">CONSTRAINT</span><span class="w"> </span><span class="ss">"BDV-CMC_CUSTOMER_CONTACT_BR_PK"</span><span class="w"> </span><span class="k">PRIMARY</span><span class="w"> </span><span class="k">KEY</span><span class="w"> </span><span class="p">(</span><span class="w"> </span><span class="n">CMC_CUSTOMER_CONTACT_ID</span><span class="p">,</span><span class="w"> </span><span class="n">LOAD_TS</span><span class="w"> </span><span class="p">)</span>
+<a href="#__codelineno-2-57" id="__codelineno-2-57" name="__codelineno-2-57"></a><span class="p">)</span>
+<a href="#__codelineno-2-58" id="__codelineno-2-58" name="__codelineno-2-58"></a><span class="k">COMMENT</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'This table contains the CMC (Contact Management Centre) Customer Contact metadata from the telephone call the customer made to the contact centre. The data in this table contains the CMC customer contact ID, the contact channel, customer telephone number (hashed) and the CMC_SURVEY_INSTANCE_ID (if available) which can be used to join to a CSAT Survey (if the customer chose to complete a CSAT Survey after the telephone call).  A CMC_CUSTOMER_CONTACT_ID record can exist without a Customer choosing to complete a survey after the call to the contact centre.'</span><span class="p">;</span>
+<a href="#__codelineno-2-59" id="__codelineno-2-59" name="__codelineno-2-59"></a>
+<a href="#__codelineno-2-60" id="__codelineno-2-60" name="__codelineno-2-60"></a><span class="cm">/* IRM Tagging */</span>
+<a href="#__codelineno-2-61" id="__codelineno-2-61" name="__codelineno-2-61"></a><span class="k">ALTER</span><span class="w"> </span><span class="k">TABLE</span><span class="w"> </span><span class="n">ADW_PROD</span><span class="p">.</span><span class="n">ADW_RDV</span><span class="p">.</span><span class="n">CMC_CUSTOMER_CONTACT_BR</span><span class="w"> </span><span class="k">SET</span><span class="w"> </span><span class="n">TAG</span><span class="w"> </span><span class="n">account_objects</span><span class="p">.</span><span class="n">tags</span><span class="p">.</span><span class="n">IRM</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">'{"IRM":[{"Primary":"L3NN","Linked":[ "L4DU","M7XX"]}]}'</span><span class="p">;</span>
+</code></pre></div>
+<h2 id="mapping-steps">Mapping Steps</h2>
+<ol>
+<li>Filter both SMG and Qualtrics sources using the selection criteria given to ensure correct data and no duplication into the final table. Ensure only those Survey Project ID's listed above are in this table.</li>
+<li>Get the NECTAR_COLLECTOR_CARD_NUM for these Survey Project's only if available: 
+If it is not available then default to NULL. </li>
+<li>Get the TRANSACTION_KEY i available for these Survey Project's only if available:
+If it is not available then default to NULL. </li>
+<li>Get the STORE_CD</li>
+<li>Get the TILL_NUM</li>
+<li>Get the TRAN_DT</li>
+<li>Get the TRAN_TM</li>
+<li>Get the TRAN_NUMBER</li>
+<li>Get the SURVEY_TYPE</li>
+<li>Get the VISIT_DATE</li>
+<li>Get the VISIT_HOUR</li>
+<li>Get the TILL_TYPE_ID</li>
+<li>Get the SURVEY_DATETIME</li>
+<li>Get the SURVEY_DATE</li>
+<li>Get the SURVEY_HOUR</li>
+<li>Get the UNIT_LOCAL_DATETIME</li>
+<li>Get the INVITE_TYPE</li>
+<li>Get the OVERALL_CSAT_SCORE</li>
+<li>Get the PF_URN</li>
+<li>Get the ORDER_NUMBER</li>
+<li>Get the AMOUNT_SPENT</li>
+<li>Get the FAV_STORE_CD</li>
+<li>Get the GENDER</li>
+<li>Get the DEPARTMENT</li>
+<li>Get the DEPARTMENT1</li>
+<li>Get the DEPARTMENT2</li>
+<li>Get the COUNTER</li>
+<li>Get the LIFE_STAGE</li>
+<li>Get the START_DATE</li>
+<li>Get the END_DATE</li>
+<li>Get the TIME_OF_TRANSACTION</li>
+<li>Get the TIME_BAND</li>
+<li>Get the STATUS</li>
+<li>Get the PROGRESS</li>
+<li>Get the DURATION</li>
+<li>Get the FINISHED</li>
+<li>Get the DELIVERY_METHOD</li>
+<li>Get the PETROL_FILLING_STATION</li>
+<li>Get the DELIVERY_PASS</li>
+<li>Get the EQ_DEF</li>
+<li>Get the REPORT_CHANNEL</li>
+<li>Get the SMART_SHOP_TYPE</li>
+<li>Get the SURVEY_BRAND</li>
+<li>Get the TRANSACTION_TYPE_CD</li>
+<li>Get the FULFILMENT_CHANNEL_CD</li>
+<li>Get the FULFILMENT_METHOD_CD</li>
+<li>Get the DEVICE_TYPE_CD</li>
+<li>Get the WEBSITE_APP_CD</li>
+<li>Get the HOME_DELIVERY_ORDER_KEY</li>
+<li>Get the DELIVERY_DATE</li>
+<li>Get the BASKET_MISSION_CD</li>
+<li>Get the RESERVATION_KEY</li>
+<li>Get the CMC_SURVEY_INSTANCE_ID</li>
+</ol>
+<p><div class="highlight"><pre><span></span><code><a href="#__codelineno-3-1" id="__codelineno-3-1" name="__codelineno-3-1"></a>
+</code></pre></div>
+item spec, version, supplier, item_cd for active specs from:
+    1. ITEM_SPEC_NK1, ITEM_SPEC_NK2 from ITEM_SPECIFICATION_EVOLVE_SAT
+    1. ITEM_SUPPLIER_CD from ITEM_SUPPLIER_SITE_LINK
+        1. ???+ warning "Supplier Cleaning"
+            <strong>Remove Dummy Supplier</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-4-1" id="__codelineno-4-1" name="__codelineno-4-1"></a>Remove ITEM_SUPPLIER_CD = I0055 when ITEM_SPEC_TITLE contains DO NOT USE
+</code></pre></div>
+<strong>Clean Evolve Supplier Codes</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-5-1" id="__codelineno-5-1" name="__codelineno-5-1"></a>Trim any supplier codes that end in -1  
+<a href="#__codelineno-5-2" id="__codelineno-5-2" name="__codelineno-5-2"></a>Remove ITEM_SUPPLIER_CD:  
+<a href="#__codelineno-5-3" id="__codelineno-5-3" name="__codelineno-5-3"></a>XA11115 (Dummy Code)  
+<a href="#__codelineno-5-4" id="__codelineno-5-4" name="__codelineno-5-4"></a>200435 (GM Supplier)  
+<a href="#__codelineno-5-5" id="__codelineno-5-5" name="__codelineno-5-5"></a>210206 (GM Supplier)
+</code></pre></div>
+        1. Get ITEM_CD from TS_BDV_ITEM_PACKAGING_COMPONENT_AVG_WEIGHT_HIST_BR_01
+1. Combine OP &amp; AP together to retrieve all necessary component level data for the object build.
+1. Apply calculations and transformations on packaging data weights. See calculations section for more detail. 
+    1. ???+ example "Calculations"
+        <strong>Secondary</strong><br/>
+        An item has secondary packaging, this is not sold to the consumer and will be for example a box containing multiple skus. We must divide the weight of this secondary component to give an actual value sold per item as to not inflate the overall packaging weight of the item.
+        <div class="highlight"><pre><span></span><code><a href="#__codelineno-6-1" id="__codelineno-6-1" name="__codelineno-6-1"></a>COMPONENT_WEIGHT / CASE_CRATE_SHIPPER_QTY
+<a href="#__codelineno-6-2" id="__codelineno-6-2" name="__codelineno-6-2"></a>Example :
+<a href="#__codelineno-6-3" id="__codelineno-6-3" name="__codelineno-6-3"></a>Case component weight = 352.59 g
+<a href="#__codelineno-6-4" id="__codelineno-6-4" name="__codelineno-6-4"></a>Case crate shipper quantity = 12
+<a href="#__codelineno-6-5" id="__codelineno-6-5" name="__codelineno-6-5"></a>Secondary Calculated weight = 352.59/12 = 29.3 g
+</code></pre></div>
+<strong>Tertiary</strong><br/>
+        Similar to the secondary calculation there is also tertiary packaging. This will usually be the pallet and any materials used to secure the pallet. Again we need to divide the weights to provide a correct weight per item.
+        <div class="highlight"><pre><span></span><code><a href="#__codelineno-7-1" id="__codelineno-7-1" name="__codelineno-7-1"></a>COMPONENT_WEIGHT / (CASE_CRATE_SHIPPER_QTY * TOTAL_CASES_PER_PALLET_LAYER_QTY)
+<a href="#__codelineno-7-2" id="__codelineno-7-2" name="__codelineno-7-2"></a>Example :
+<a href="#__codelineno-7-3" id="__codelineno-7-3" name="__codelineno-7-3"></a>Stretch Wrap component weight = 250
+<a href="#__codelineno-7-4" id="__codelineno-7-4" name="__codelineno-7-4"></a>Case crate shipper quantity = 12
+<a href="#__codelineno-7-5" id="__codelineno-7-5" name="__codelineno-7-5"></a>Case crate total cases per pallet = 42
+<a href="#__codelineno-7-6" id="__codelineno-7-6" name="__codelineno-7-6"></a>Tertiary Calculated weight = 250/(12*42) = 0.49603 g
+</code></pre></div>
+<strong>Multipack Calculation</strong><br/>
+        This is the opposite of the previous two calculations. When we sell multipacks the weight assigned is only equivalent to one item. In this case we must multiply the weight by the no. of items in the pack.
+        <div class="highlight"><pre><span></span><code><a href="#__codelineno-8-1" id="__codelineno-8-1" name="__codelineno-8-1"></a>CONSUMER_PACK_QTY * COMPONENT_WEIGHT
+<a href="#__codelineno-8-2" id="__codelineno-8-2" name="__codelineno-8-2"></a>Example :
+<a href="#__codelineno-8-3" id="__codelineno-8-3" name="__codelineno-8-3"></a>Component weight from Evolve for bottle = 34 gm
+<a href="#__codelineno-8-4" id="__codelineno-8-4" name="__codelineno-8-4"></a>Calculated Weight for Bottle = 4 * 34 gm = 136 gm
+</code></pre></div>
+<strong>Recycled Weight Calculation</strong>
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-9-1" id="__codelineno-9-1" name="__codelineno-9-1"></a>Calculated Recycled Content Weight =% Recycled Content * Calculated Component Weight
+</code></pre></div>
+<strong>Multiple supplier component Calculation</strong><br/>
+        A spefication and version has multiple suppliers of a component, for example in our data we will have three entries against a bottle, however only one bottle will have sold in the store. Therefore we have to take this into consideration when building both fact views. For packaging we have worked out the average value of the three components, then divided by the no. of components to give an accurate figure when rolling up to the views consumed by the business:
+        <div class="highlight"><pre><span></span><code><a href="#__codelineno-10-1" id="__codelineno-10-1" name="__codelineno-10-1"></a>Bottle 32g,Bottle 36g, Bottle 33g
+<a href="#__codelineno-10-2" id="__codelineno-10-2" name="__codelineno-10-2"></a>Average value = 33.6 g / 3 = 11.2 g
+</code></pre></div>
+1. Get TRAN_DT, NET_SALES_VOLUME, ITEM_CD, SALES_INITIATED_LOCATION_CD, FULFILMENT_CHANNEL_CD from AGG_FINANCE_PNL_METRIC to be able to combine sales data with packaging for tonnage statistics.
+    <div class="highlight"><pre><span></span><code><a href="#__codelineno-11-1" id="__codelineno-11-1" name="__codelineno-11-1"></a>SELECT TRAN_DT, NET_SALES_VOLUME, ITEM_CD, SALES_INITIATED_LOCATION_CD, FULFILMENT_CHANNEL_CD  
+<a href="#__codelineno-11-2" id="__codelineno-11-2" name="__codelineno-11-2"></a>FROM adw_prod.adw_finance_pl.agg_finance_pnl_metric  
+<a href="#__codelineno-11-3" id="__codelineno-11-3" name="__codelineno-11-3"></a>INNER JOIN adw_prod.adw_reference_pl.dim_date ON tran_dt = date_dt  
+<a href="#__codelineno-11-4" id="__codelineno-11-4" name="__codelineno-11-4"></a>WHERE clndr_dt_id BETWEEN to_char(dateadd(DAYS, -756, current_date()), 'YYYYMMDD')AND to_char(current_date(), 'YYYYMMDD')
+</code></pre></div>
+1. Add in country data to BR table by looking up SALES_INITIATED_LOCATION_CD against LOCATION_CD in DIM_LOCATION.
+1. Apply stock and sales logic to allow weighting sales volume for multiple suppliers of an item.
+    1. ???+ info "Stock &amp; Sales Logic"
+        <div class="highlight"><pre><span></span><code><a href="#__codelineno-12-1" id="__codelineno-12-1" name="__codelineno-12-1"></a>Combine FACT_STORE_DELIVERY_ITEM &amp; FACT_DEPOT_STOCK to retrieve ITEM_CD, SUPPLIER_CD, STOCK_DT, SUPPLIER_QUANTITY
+</code></pre></div>
+1. Combine sales data with packaging data.
+1. Add Valpak data into BR table.
+1. Apply tonnage calculations with sales and packaging data.
+1. Apply recycling advice cleaning to Evolve &amp; Valpak. Lookup adw_product_tran.evolve_valpak_recycle_advice_ref and return the cleaned column in the table output.
+1. Load transform schema to table.
+1. End.
+<div class="highlight"><pre><span></span><code><a href="#__codelineno-13-1" id="__codelineno-13-1" name="__codelineno-13-1"></a>
+</code></pre></div></p>
+<h2 id="diagram">Diagram</h2>
+<pre class="mermaid"><code>flowchart LR
+    A[Happy Christmas] --&gt;|Get gifts| B(Go shopping)
+    B --&gt; C{Let me think}
+    C --&gt;|One| D[Laptop]
+    C --&gt;|Two| E[iPhone]
+    C --&gt;|Three| F[fa:fa-car Car]
+</code></pre>
+<h2 id="tests-checks">Tests &amp; Checks</h2>
+<p>Original Tests:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Secondary &amp; Tertiary calculations applied</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Multipack calculations applied</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Supplier weighting applied</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Sales volume is the same in br table as source</li>
+<li class="task-list-item"><label class="task-list-control"><input checked="" disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Tonnage and recycled tonnage calculations are verified</li>
+</ul>
+<p>New Tests:</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Fulfilment channel &amp; Tran_DT incorporated into table</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Enhanced supplier cleaning added</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> New filter conditions for TRAN_DT from AGG_FINANCE_PNL_METRIC have been applied</li>
+<li class="task-list-item"><label class="task-list-control"><input disabled="" type="checkbox"><span class="task-list-indicator"></span></input></label> Specification weight at end of the month is applied to whole period</li>
+</ul>
+<hr/>
+<div class="md-source-file">
+<small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">August 17, 2023</span>
+</small>
+</div>
+</article>
+</div>
+<script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var tab,labels=set.querySelector(".tabbed-labels");for(tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+</div>
+<button class="md-top md-icon" data-md-component="top" hidden="" type="button">
+<svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"></path></svg>
+            Back to top
+          </button>
+</main>
+<footer class="md-footer">
+<div class="md-footer-meta md-typeset">
+<div class="md-footer-meta__inner md-grid">
+<div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
+      Material for MkDocs
+    </a>
+</div>
+</div>
+</div>
+</footer>
+</div>
+<div class="md-dialog" data-md-component="dialog">
+<div class="md-dialog__inner md-typeset"></div>
+</div>
+<script id="__config" type="application/json">{"base": "../..", "features": [{"instant.page_filter": true}, {"instant.page_search": true}, {"instant.navigation.expand": true}, {"instant.navigation.tabs": true}, "navigation.tabs", "navigation.sections", "toc.integrate", "navigation.top", "navigation.expand", "navigation.path", "search.suggest", "search.highlight", "content.tabs.link", "content.code.annotation", "content.code.copy", "navigation.tracking"], "search": "../../assets/javascripts/workers/search.74e28a9f.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+<script src="../../assets/javascripts/bundle.220ee61c.min.js"></script>
+<script src="https://unpkg.com/mermaid@10.0.2/dist/mermaid.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
+<script src="../../js/extra.js"></script>
+<script>window.mermaidConfig = {default: {
+    startOnLoad: false
+}};</script></body>
+</html>
