@@ -233,25 +233,33 @@ Target system for this object is ADW_BDV.
          A[OP] 
          B[AP]
          C([EVOLVE_SAT])
-         E([VALPAK])
+         D([VALPAK])
          end
          subgraph TS
-         A([OP])-->|union| D[/PACKAGING_DATA/]
-         B([AP])-->|union| D
-         I([DIM_ITEM])-->|filter each packaging source|J[/FILTERED_PACKAGING/]
-         J-->|clean recycling column|K[/RECYCLING_ADVICE/]
-         C-->|get spec statuses and dates|F[/PACKAGING_SPECS/]
-         F-->|create correct component weights|H[/PACKAGING_CALCS/]
-         E-->|union|D
-         K-->|join packaging with specs|F
-         D-->J
+         E[/PACKAGING_DATA/]
+         F[/PACKAGING_SPECS/]
+         G[/FILTERED_PACKAGING/]
+         H[/RECYCLING_ADVICE/]
+         I[/PACKAGING_CALCS/]
+         J([DIM_ITEM])
          end
          subgraph ADW_BDV
          direction LR
-         H-->G([PACKAGING_COMPONENT_BR])
+         K([PACKAGING_COMPONENT_BR])
          end
+         A-->|union| E
+         B-->|union| E
+         C-->|get spec statuses and dates|F
+         D-->|union|E
+         E-->G
+         G-->|create correct component weights|H
+         I-->|clean recycling column|K
+         H-->|join packaging with specs|F
+         J-->|filter each packaging source|G
+         F-->I
          end
       ```
+      ![](bdv_example.drawio.png)
 
 ## Tests & Checks
 ???+ Success "Packaging Component BR Validation"
